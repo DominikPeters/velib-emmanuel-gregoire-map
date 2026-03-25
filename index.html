@@ -41,6 +41,7 @@
   #day-tabs {
     display: flex;
     align-items: center;
+    justify-content: center;
     padding: 6px 12px 2px;
     gap: 4px;
     overflow-x: auto;
@@ -109,6 +110,14 @@
     height: 10px;
     border-radius: 5px;
     opacity: 0.7;
+  }
+  .pause-bar {
+    position: absolute;
+    top: 2px;
+    height: 10px;
+    border-radius: 5px;
+    background: rgba(200, 212, 232, 0.35);
+    opacity: 0.65;
   }
   /* Now marker */
   #now-marker {
@@ -297,7 +306,11 @@ function minutesToLabel(mins) {
 fetch('rides.json').then(r => r.json()).then(data => {
   const routeCache = data.route_cache || {};
   const allDays = Object.keys(data.days).sort();
-  if (allDays.length === 0) { document.getElementById('subtitle').textContent = 'Aucune donnée'; return; }
+  const subtitleEl = document.getElementById('subtitle');
+  function setSubtitleHTML(html) {
+    subtitleEl.innerHTML = html;
+  }
+  if (allDays.length === 0) { subtitleEl.textContent = 'Aucune donnée'; return; }
 
   // ── Map init ──────────────────────────────────────────────────────────
   const map = L.map('map', { zoomControl: true, attributionControl: true });
@@ -305,6 +318,7 @@ fetch('rides.json').then(r => r.json()).then(data => {
     attribution: '&copy; OpenStreetMap &copy; CARTO',
     subdomains: 'abcd', maxZoom: 19
   }).addTo(map);
+  map.setView([48.8566, 2.3522], 12);
 
   const palette    = ['#3b82f6','#10b981','#f59e0b','#ec4899','#8b5cf6'];
   const paletteRGB = ['59,130,246','16,185,129','245,158,11','236,72,153','139,92,246'];
@@ -316,8 +330,8 @@ fetch('rides.json').then(r => r.json()).then(data => {
   let animState = null;
 
   // Animation state
-  let animProgress = 0;  // 0..1 through the day's route
-  let speed = 0.00006;
+  let animMinutes = 0;   // minutes since the selected day start (03:00)
+  let speed = 0.010;
   let paused = false;
   let lastTime = null;
   let dragging = false;
@@ -362,7 +376,7 @@ fetch('rides.json').then(r => r.json()).then(data => {
       btn.textContent = shortDateFr(day);
       btn.onclick = () => {
         selectedDay = day;
-        animProgress = 0;
+        animMinutes = 0;
         lastTime = null;
         renderMap();
       };
@@ -410,20 +424,25 @@ fetch('rides.json').then(r => r.json()).then(data => {
       hourLabelsEl.appendChild(lbl);
     }
 
-    // Ride bars on track — use segment depart/arrive times if available
+    // Ride and pause bars on track — derive them from the same timeline the animation uses.
     scrubberTrack.innerHTML = '';
-    const segments = dayData ? dayData.segments : null;
-    if (segments && segments.length > 0) {
-      segments.forEach((seg, i) => {
-        const startMins = timeToMinutes(seg.depart);
-        const endMins = timeToMinutes(seg.arrive);
+    if (animState && animState.timeline && animState.timeline.length > 0) {
+      let rideIdx = 0;
+      animState.timeline.forEach(seg => {
+        const startMins = animState.firstMins + seg.startMins;
+        const endMins = animState.firstMins + seg.endMins;
         const leftPct = minsToPct(startMins);
         const widthPct = ((endMins - startMins) / viewSpan) * 100;
         const bar = document.createElement('div');
-        bar.className = 'ride-bar';
+        bar.className = seg.isPause ? 'pause-bar' : 'ride-bar';
         bar.style.left = leftPct + '%';
         bar.style.width = Math.max(widthPct, 0.5) + '%';
-        bar.style.background = palette[i % palette.length];
+        if (seg.isPause) {
+          bar.style.background = 'rgba(200, 212, 232, 0.35)';
+        } else {
+          bar.style.background = palette[rideIdx % palette.length];
+          rideIdx++;
+        }
         scrubberTrack.appendChild(bar);
       });
     } else if (stations.length >= 2) {
@@ -463,21 +482,20 @@ fetch('rides.json').then(r => r.json()).then(data => {
     }
 
     // Update subtitle
-    if (stations.length > 0) {
-      const lastStation = stations[stations.length - 1];
-      document.getElementById('subtitle').textContent =
-        `${formatDateFr(selectedDay)} · dernier signal ${lastStation.time} à ${lastStation.name.split(' - ')[0]} · Paris`;
-    } else {
-      document.getElementById('subtitle').textContent = `${formatDateFr(selectedDay)} · Paris`;
-    }
+    setSubtitleHTML(
+      'Données de ' +
+      '<a href="https://x.com/le_velib_a_greg" target="_blank" rel="noopener">@le_velib_a_greg</a>' +
+      ' et ' +
+      '<a href="https://velibest.fr/" target="_blank" rel="noopener">velibest.fr</a>'
+    );
   }
 
-  // ── Playhead position from animProgress ────────────────────────────────
+  // ── Playhead position from animMinutes ─────────────────────────────────
   function updatePlayhead() {
     if (!animState) { playhead.style.display = 'none'; return; }
     playhead.style.display = '';
 
-    const currentMins = animState.clockToMinutes(animProgress);
+    const currentMins = animState.firstMins + animMinutes;
     const vs = scrubberContainer._viewStart || 0;
     const ve = scrubberContainer._viewEnd || DAY_MINUTES;
     const pct = ((currentMins - vs) / (ve - vs)) * 100;
@@ -492,11 +510,10 @@ fetch('rides.json').then(r => r.json()).then(data => {
     const pct = Math.max(0, Math.min(1, (clientX - rect.left) / rect.width));
     const vs = scrubberContainer._viewStart || 0;
     const ve = scrubberContainer._viewEnd || DAY_MINUTES;
-    const { firstMins, lastMins, minutesToClock, TOTAL_CLOCK } = animState;
+    const { firstMins, totalMinutes } = animState;
     const targetMins = vs + pct * (ve - vs);
-    const clampedMins = Math.max(firstMins, Math.min(lastMins, targetMins));
-    const clockVal = minutesToClock(clampedMins);
-    animProgress = ((clockVal % TOTAL_CLOCK) + TOTAL_CLOCK) % TOTAL_CLOCK;
+    const clampedMins = Math.max(firstMins, Math.min(firstMins + totalMinutes, targetMins));
+    animMinutes = clampedMins - firstMins;
   }
 
   scrubberContainer.addEventListener('mousedown', e => {
@@ -516,6 +533,7 @@ fetch('rides.json').then(r => r.json()).then(data => {
     mapLayers = [];
     animState = null;
     const allBounds = [];
+    const activeBounds = [];
 
     // Draw inactive days (gray)
     allDays.forEach(day => {
@@ -567,6 +585,7 @@ fetch('rides.json').then(r => r.json()).then(data => {
         const fg = L.polyline(pts, { color: palette[i % palette.length], weight: 2.5, opacity: 0.65, lineCap: 'round', lineJoin: 'round' }).addTo(map);
         mapLayers.push(bg, fg);
         pts.forEach(p => allBounds.push(p));
+        pts.forEach(p => activeBounds.push(p));
       } else {
         segments.push(null);
       }
@@ -590,12 +609,18 @@ fetch('rides.json').then(r => r.json()).then(data => {
         .bindTooltip(
           `<div class="station-label"><span class="stime">${s.time}</span> ${short}</div>`,
           { permanent: true, direction: tooltipDirs[i % tooltipDirs.length], offset: [r + 4, 0] }
-        );
+      );
       mapLayers.push(marker);
       allBounds.push([s.lat, s.lon]);
+      activeBounds.push([s.lat, s.lon]);
     });
 
-    if (allBounds.length > 0) map.fitBounds(L.latLngBounds(allBounds).pad(0.1));
+    if (activeBounds.length > 0) {
+      map.invalidateSize();
+      requestAnimationFrame(() => {
+        map.fitBounds(L.latLngBounds(activeBounds).pad(0.1));
+      });
+    }
 
     // Setup animation
     if (segments.some(s => s !== null)) {
@@ -648,111 +673,67 @@ fetch('rides.json').then(r => r.json()).then(data => {
     const dayData = data.days[selectedDay];
     const segTimingData = dayData && dayData.segments ? dayData.segments : null;
 
-    // Build timeline with pauses at stations
-    // Pause durations are proportional to actual parking time (if segment data available)
-    const segLengths = [];
-    for (let i = 0; i < stationProgress.length - 1; i++)
-      segLengths.push(stationProgress[i + 1] - stationProgress[i]);
-
-    // Compute real ride durations and parking durations from segment data
-    const rideMins = []; // actual ride duration in minutes per segment
-    const parkMins = []; // parking duration after each segment (except last)
-    if (segTimingData && segTimingData.length === segLengths.length) {
-      for (let i = 0; i < segTimingData.length; i++) {
-        const dur = timeToMinutes(segTimingData[i].arrive) - timeToMinutes(segTimingData[i].depart);
-        rideMins.push(Math.max(dur, 1));
-        if (i < segTimingData.length - 1) {
-          const park = timeToMinutes(segTimingData[i + 1].depart) - timeToMinutes(segTimingData[i].arrive);
-          parkMins.push(Math.max(park, 0));
-        }
-      }
-    }
-    const hasTimingData = rideMins.length === segLengths.length;
-
-    // Total real time for scaling: sum of ride times + parking times
-    const totalRealMins = hasTimingData
-      ? rideMins.reduce((a, b) => a + b, 0) + parkMins.reduce((a, b) => a + b, 0)
-      : 1;
-
-    // Clock units: ride segments use their geographic length, pauses are scaled to real parking time
-    // We scale pause clock units relative to ride clock units proportionally to real time ratios
-    const totalRideClockUnits = segLengths.reduce((a, b) => a + b, 0);
-    const totalRideRealMins = hasTimingData ? rideMins.reduce((a, b) => a + b, 0) : 1;
-
     const timeline = [];
-    let _c = 0;
-    segLengths.forEach((len, i) => {
-      // Real time for this segment
-      const minsStart = hasTimingData ? timeToMinutes(segTimingData[i].depart) : stationMins[i];
-      const minsEnd = hasTimingData ? timeToMinutes(segTimingData[i].arrive) : stationMins[i + 1];
+    const timings = (segTimingData && segTimingData.length > 0) ? segTimingData : null;
+    const rideCount = timings ? timings.length : routeSegments.length;
 
-      timeline.push({ clockStart: _c, clockEnd: _c + len, pathStart: stationProgress[i], pathEnd: stationProgress[i + 1], isPause: false, minsStart, minsEnd });
-      _c += len;
+    for (let i = 0; i < rideCount; i++) {
+      const pathStart = stationProgress[Math.min(i, stationProgress.length - 2)];
+      const pathEnd = stationProgress[Math.min(i + 1, stationProgress.length - 1)];
+      const timing = timings ? timings[i] : null;
+      const minsStart = timing ? timeToMinutes(timing.depart) : stationMins[i];
+      const minsEnd = timing ? timeToMinutes(timing.arrive) : stationMins[i + 1];
 
-      if (i < segLengths.length - 1) {
-        // Pause duration: proportional to real parking time if available
-        let pauseClock;
-        if (hasTimingData && parkMins[i] > 0) {
-          // Scale: parkMins[i] real minutes → proportional clock units
-          pauseClock = (parkMins[i] / totalRideRealMins) * totalRideClockUnits;
-          // Cap at reasonable amount to avoid extremely long pauses
-          pauseClock = Math.min(pauseClock, totalRideClockUnits * 0.5);
-          pauseClock = Math.max(pauseClock, 0.02); // minimum visible pause
-        } else {
-          pauseClock = 0.10; // fallback
-        }
-        const pauseMinsStart = hasTimingData ? timeToMinutes(segTimingData[i].arrive) : stationMins[i + 1];
-        const pauseMinsEnd = hasTimingData && i < segTimingData.length - 1 ? timeToMinutes(segTimingData[i + 1].depart) : pauseMinsStart;
-        timeline.push({ clockStart: _c, clockEnd: _c + pauseClock, pathStart: stationProgress[i + 1], pathEnd: stationProgress[i + 1], isPause: true, minsStart: pauseMinsStart, minsEnd: pauseMinsEnd });
-        _c += pauseClock;
+      timeline.push({
+        startMins: minsStart - firstMins,
+        endMins: minsEnd - firstMins,
+        pathStart,
+        pathEnd,
+        isPause: false,
+      });
+
+      const nextTiming = timings && timings[i + 1] ? timings[i + 1] : null;
+      if (nextTiming) {
+        const pauseStart = minsEnd;
+        const pauseEnd = timeToMinutes(nextTiming.depart);
+        timeline.push({
+          startMins: pauseStart - firstMins,
+          endMins: pauseEnd - firstMins,
+          pathStart: pathEnd,
+          pathEnd,
+          isPause: true,
+        });
       }
-    });
-    const TOTAL_CLOCK = _c || 1;
+    }
+    const totalMinutes = Math.max(
+      (timings && timings.length > 0)
+        ? timeToMinutes(timings[timings.length - 1].arrive) - firstMins
+        : lastMins - firstMins,
+      1
+    );
 
-    function clockToProgress(c) {
-      const cm = ((c % TOTAL_CLOCK) + TOTAL_CLOCK) % TOTAL_CLOCK;
+    function segmentForMinutes(mins) {
+      const cm = Math.max(0, Math.min(totalMinutes, mins));
       for (const seg of timeline) {
-        if (cm <= seg.clockEnd) {
-          if (seg.isPause) return seg.pathStart;
-          const t = (cm - seg.clockStart) / (seg.clockEnd - seg.clockStart);
-          const easing = Math.min(1, (seg.clockEnd - seg.clockStart) / 0.06);
-          const te = t + easing * (smoothstep(t) - t);
-          return seg.pathStart + te * (seg.pathEnd - seg.pathStart);
-        }
+        if (cm <= seg.endMins) return seg;
       }
-      return 0;
+      return timeline[timeline.length - 1] || null;
     }
 
-    // Map clock value to minutes-of-day using station times (for playhead)
-    function clockToMinutes(c) {
-      const cm = ((c % TOTAL_CLOCK) + TOTAL_CLOCK) % TOTAL_CLOCK;
-      for (const seg of timeline) {
-        if (cm <= seg.clockEnd) {
-          if (seg.isPause) {
-            // Interpolate through parking time
-            const t = seg.clockEnd === seg.clockStart ? 0 : (cm - seg.clockStart) / (seg.clockEnd - seg.clockStart);
-            return seg.minsStart + t * (seg.minsEnd - seg.minsStart);
-          }
-          const t = (cm - seg.clockStart) / (seg.clockEnd - seg.clockStart);
-          return seg.minsStart + t * (seg.minsEnd - seg.minsStart);
-        }
-      }
-      return firstMins;
+    function minutesToProgress(mins) {
+      const cm = Math.max(0, Math.min(totalMinutes, mins));
+      const seg = segmentForMinutes(cm);
+      if (!seg) return 0;
+      if (seg.isPause) return seg.pathStart;
+      const t = (cm - seg.startMins) / (seg.endMins - seg.startMins);
+      const easing = Math.min(1, (seg.endMins - seg.startMins) / 0.06);
+      const te = t + easing * (smoothstep(t) - t);
+      return seg.pathStart + te * (seg.pathEnd - seg.pathStart);
     }
 
-    // Inverse: minutes-of-day to clock value (for scrubbing)
-    function minutesToClock(mins) {
-      // Find the timeline segment (ride or pause) that contains this time
-      for (const seg of timeline) {
-        if (mins >= seg.minsStart && mins <= seg.minsEnd) {
-          const timeRange = seg.minsEnd - seg.minsStart;
-          const t = timeRange === 0 ? 0 : (mins - seg.minsStart) / timeRange;
-          return seg.clockStart + t * (seg.clockEnd - seg.clockStart);
-        }
-      }
-      // If before first segment, return start; if after last, return end
-      if (mins <= firstMins) return 0;
-      return TOTAL_CLOCK - 0.001;
+    function isPauseAtMinutes(mins) {
+      const seg = segmentForMinutes(mins);
+      return !!(seg && seg.isPause);
     }
 
     function getPointAtProgress(t) {
@@ -768,33 +749,25 @@ fetch('rides.json').then(r => r.json()).then(data => {
       return { pt: [a[0]+(b[0]-a[0])*frac, a[1]+(b[1]-a[1])*frac], segIdx: fullPath[lo].segIdx };
     }
 
-    function isInPause(c) {
-      const cm = ((c % TOTAL_CLOCK) + TOTAL_CLOCK) % TOTAL_CLOCK;
-      for (const seg of timeline) {
-        if (cm <= seg.clockEnd) return seg.isPause;
-      }
-      return false;
-    }
-
-    animState = { clockToProgress, getPointAtProgress, TOTAL_CLOCK, clockToMinutes, minutesToClock, firstMins, lastMins, isInPause };
-    animProgress = 0;
+    animState = { minutesToProgress, getPointAtProgress, totalMinutes, firstMins, lastMins, timeline, isPauseAtMinutes };
+    animMinutes = 0;
     lastTime = null;
   }
 
   function latLngToCanvas(ll) {
+    if (!map._loaded) return [0, 0];
     const p = map.latLngToContainerPoint(L.latLng(ll[0], ll[1]));
     return [p.x, p.y];
   }
 
-  const TRAIL_CLOCK = 0.04;
+  const TRAIL_LOOKBACK_MS = 800;
 
   function animate(ts) {
     if (!paused && !dragging && animState) {
       if (lastTime !== null) {
-        // Double speed during dwell/parking time
-        const inPause = animState.isInPause(animProgress);
-        animProgress += speed * (inPause ? 3 : 1) * (ts - lastTime);
-        if (animProgress >= animState.TOTAL_CLOCK) animProgress = 0;
+        const rate = animState.isPauseAtMinutes(animMinutes) ? 4 : 1;
+        animMinutes += speed * rate * (ts - lastTime);
+        if (animMinutes >= animState.totalMinutes) animMinutes = 0;
       }
       lastTime = ts;
     } else if (paused || dragging) {
@@ -804,10 +777,11 @@ fetch('rides.json').then(r => r.json()).then(data => {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
     if (animState) {
-      const { clockToProgress: ctp, getPointAtProgress: gpap, TOTAL_CLOCK: TC } = animState;
-      const clockMod = ((animProgress % TC) + TC) % TC;
-      const progress = ctp(clockMod);
-      const trailProgress = ctp(Math.max(0, clockMod - TRAIL_CLOCK));
+      const { minutesToProgress: mtp, getPointAtProgress: gpap, totalMinutes: totalMins } = animState;
+      const currentMinutes = Math.max(0, Math.min(totalMins, animMinutes));
+      const progress = mtp(currentMinutes);
+      const trailLookbackMinutes = Math.max(6, Math.min(18, speed * TRAIL_LOOKBACK_MS));
+      const trailProgress = mtp(Math.max(0, currentMinutes - trailLookbackMinutes));
 
       const steps = 100;
       for (let s = 0; s <= steps; s++) {
@@ -856,7 +830,7 @@ fetch('rides.json').then(r => r.json()).then(data => {
     document.getElementById('btn-pause').classList.remove('active');
   });
 
-  const speedMap = { 'btn-slow': 0.000022, 'btn-normal': 0.00006, 'btn-fast': 0.00020 };
+  const speedMap = { 'btn-slow': 0.004, 'btn-normal': 0.010, 'btn-fast': 0.026 };
   ['btn-slow','btn-normal','btn-fast'].forEach(id => {
     document.getElementById(id).addEventListener('click', () => {
       speed = speedMap[id];
