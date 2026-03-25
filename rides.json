@@ -124,6 +124,20 @@
           "lat": 48.834097274832295,
           "lon": 2.3087677359581,
           "time": "18h17"
+        },
+        {
+          "id": "station_14103",
+          "name": "Maine - Liancourt",
+          "lat": 48.835064363954,
+          "lon": 2.323731449974,
+          "time": "18h39"
+        },
+        {
+          "id": "station_17005",
+          "name": "Brochant - Clichy",
+          "lat": 48.89032998912038,
+          "lon": 2.319730559929781,
+          "time": "19h12"
         }
       ],
       "segments": [
@@ -154,6 +168,14 @@
         {
           "depart": "18h08",
           "arrive": "18h17"
+        },
+        {
+          "depart": "18h34",
+          "arrive": "18h39"
+        },
+        {
+          "depart": "18h43",
+          "arrive": "19h12"
         }
       ]
     },
@@ -255,6 +277,22 @@
         "start_time": "2026-03-25T17:08:30.089Z",
         "end_time": "2026-03-25T17:17:06.548Z",
         "status": "completed"
+      },
+      {
+        "id": "853189d7-1b4b-403f-a94b-8ac4c35dac65",
+        "start_station_id": "station_15040",
+        "end_station_id": "station_14103",
+        "start_time": "2026-03-25T17:34:50.742Z",
+        "end_time": "2026-03-25T17:39:18.985Z",
+        "status": "completed"
+      },
+      {
+        "id": "9a0ba64b-711f-4d53-8799-414bbddcbfc7",
+        "start_station_id": "station_14103",
+        "end_station_id": "station_17005",
+        "start_time": "2026-03-25T17:43:14.965Z",
+        "end_time": "2026-03-25T18:12:24.709Z",
+        "status": "completed"
       }
     ]
   },
@@ -274,6 +312,8 @@
     "48.87746,2.30969->48.87836,2.30525": "kkiiHqbbMXrPDZIPe@nAkA~CMNAACAE?IFCP?Dg@B",
     "48.87836,2.30525->48.83453,2.31315": "wpiiHofaMeEXQBYJiCySi@yCQiDs@iMEs@NQv@eAjA{Aj@y@j@q@p@}@DUjA}AlA}AdAuAhDoEvBsCb@a@dA}A`BwBnBgCh@{@`@]l@c@zC_B|A{@fAy@vCkBf@e@|@m@~@k@~AgAlAu@PDDAJEnBsAbBoAR[fD|BhGfEFPPNd@^d@h@b@`ANf@Vd@p@n@`Aj@tA|@b@Bz@KJ?b@P|@d@J?PJHDJEXTh@\\pAz@xA|@XRNs@HYV]R]p@q@fBaBzBsBjDkDxGcGrCiCzC_D`CeDz@ITIHHFB|AYrB_@dAUfI}AdAUnA[hCi@vAQf@IjCk@bLuBnDbDnN~M|@|@LJDTD^NxAFl@N}@ZMl@mANSd@FPFr@z@xAnBnA~Af@r@fDhEDBTAhCu@j@In@MvAg@fCw@r@SFNRz@h@xB|@vDRr@HDNADPDj@NrAFlAF~@SNMTEf@Dh@P\\VN@LANGjAA\\BZJb@n@rA~@jBRV~@jAJF^Jx@G\\CP?FFbCpEn@rA`@r@a@|@KT",
     "48.83453,2.31315->48.84477,2.31101": "e_aiHsxbM_BdDy@hBILMMIG}AyAk@e@s@[YGw@IICh@z@rAnBGBGAs@m@Y]QKkBBQEIAe@@BlB@zC}DmBoBcAiD_Ci@]cEoDQQc@cA[\\kBzAqCpB_I~FwB|AXlAt@i@",
-    "48.84477,2.31101->48.83410,2.30877": "s~biHgjbMpO_LnAaAp@s@fCuC`AkADCDCDKXERBzGp@hAJrGxItB|C^j@b@b@p@r@HLBIb@h@pAnA`A`AnBjBdAdANXHDKj@i@d@UT"
+    "48.84477,2.31101->48.83410,2.30877": "s~biHgjbMpO_LnAaAp@s@fCuC`AkADCDCDKXERBzGp@hAJrGxItB|C^j@b@b@p@r@HLBIb@h@pAnA`A`AnBjBdAdANXHDKj@i@d@UT",
+    "48.83410,2.30877->48.83506,2.32373": "e|`iHa}aMj@g@RS^RLs@BKb@qB^uAp@iCj@iBeDqEsBwCu@gAaAkBeCwEIKICS@y@HS@QCOIGC[_@]c@W]o@oA{@aBOc@Ga@?a@FaABm@XETYLg@Ae@I[KQQMU?G@AQC]E]OcCOmAK{ECkAG}@BM@QBs@B{@@g@TI|@]x@Wh@ULK`A[hCo@nAa@",
+    "48.83506,2.32373->48.89033,2.31973": "obaiHq{dMoA`@iCn@aAZc@@[JiBl@gA^mA^_@TIAIAy@VyAb@_ATcCv@]PkA^{@XMBICMOw@aAU]y@qAi@s@cB}ByBkCSQq@Ec@?[?[Bo@Ny@w@wHmHsDqDyCmCmAgAy@PuMjCoCj@}B^cALeEv@kCh@}GrAs@LOC[q@[c@Q_@A?KGMS[s@Ym@q@wAMWQQwAaAYKQCgAq@mCeBoCeBSv@u@lDeA~EuAlGk@nCm@~Cw@bEcAjFED}B~KWjAYrA[SkBmAmAu@YUCMGGSOIMy@k@Ps@p@sCAKGIWWkDcCeDyBaAw@GG_@C[v@[lAQlASMOGG@IDw@k@aDwB{AcAmAu@m@g@?k@U{BGk@MOKGMAUHKAYQwB{AQEW@CP_@zBSdAAFGFIFMTIT}@hEm@hCE\\?\\?Zo@`@a@\\gAx@_Ah@gBpAkAp@qCxA{@f@s@l@iA~As@`AeAvA}B~Cc@`@e@p@aAnAeDfEg@r@e@l@kChDY^MDq@z@y@bAeCfDg@l@cApAEReAtA_AlAgGwGIIc@_Ae@aAsBiE{BmE}AcDMQuCaGcBgDiE}IaBeDWf@eAzBoAbC{AlD_@k@gBgC]e@"
   }
 }
