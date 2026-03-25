@@ -23,9 +23,22 @@ jobs:
         run: python3 poll.py
 
       - name: Commit changes
+        id: commit
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add rides.json
-          git diff --cached --quiet || git commit -m "Update rides data $(date -u +%Y-%m-%dT%H:%M:%SZ)"
-          git push
+          if git diff --cached --quiet; then
+            echo "changed=false" >> $GITHUB_OUTPUT
+          else
+            git commit -m "Update rides data $(date -u +%Y-%m-%dT%H:%M:%SZ)"
+            git push
+            echo "changed=true" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Upload rides.json to FTP
+        if: steps.commit.outputs.changed == 'true'
+        run: |
+          curl --silent --upload-file rides.json \
+            --user ${{ secrets.ftp_username }}:${{ secrets.ftp_password }} \
+            ftp://w008ef9a.kasserver.com/projects/gregoire-map/rides.json

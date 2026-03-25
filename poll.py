@@ -12,12 +12,13 @@ Environment variables:
 
 import json, os, sys, urllib.request
 from datetime import datetime, timezone, timedelta
+from zoneinfo import ZoneInfo
 
 BIKE_API = "https://tdqr.ovh/api/rides/bike/bike_90157?limit=5"
 RIDES_JSON = os.path.join(os.path.dirname(__file__) or ".", "rides.json")
 STATIONS_JSON = os.path.join(os.path.dirname(__file__) or ".", "stations.json")
 
-PARIS_TZ = timezone(timedelta(hours=2))  # CEST (late March)
+PARIS_TZ = ZoneInfo("Europe/Paris")
 DAY_ROLLOVER_HOUR = 3  # days roll over at 3am
 
 
