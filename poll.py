@@ -101,7 +101,10 @@ def main():
     # Fetch latest rides from API
     print("Fetching latest rides...")
     try:
-        with urllib.request.urlopen(BIKE_API, timeout=30) as r:
+        req = urllib.request.Request(BIKE_API, headers={
+            "User-Agent": "Mozilla/5.0 (compatible; velib-tracker/1.0; +https://github.com/DominikPeters/velib-emmanuel-gregoire-map) Dominik Peters <mail@dominik-peters.de>"
+        })
+        with urllib.request.urlopen(req, timeout=30) as r:
             api_resp = json.loads(r.read())
     except Exception as e:
         print(f"API request failed: {e}")
