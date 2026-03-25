@@ -58,55 +58,55 @@
         {
           "id": "station_42704",
           "name": "Mairie du Kremlin-Bicêtre",
-          "time": "05h56",
           "lat": 48.81191981537702,
-          "lon": 2.3570189997553825
+          "lon": 2.3570189997553825,
+          "time": "07h56"
         },
         {
           "id": "station_42029",
           "name": "Stalingrad - Germaine Tailleferre",
-          "time": "06h03",
           "lat": 48.80257200481316,
-          "lon": 2.3786691203713417
+          "lon": 2.3786691203713417,
+          "time": "08h03"
         },
         {
           "id": "station_44013",
           "name": "Edouard Tremblay - Julian Grimaux",
-          "time": "07h51",
           "lat": 48.781383825117,
-          "lon": 2.3723508417606
+          "lon": 2.3723508417606,
+          "time": "10h02"
         },
         {
           "id": "station_15038",
           "name": "Place Adolphe Cherioux - Vaugirard",
-          "time": "09h45",
           "lat": 48.83959442800459,
-          "lon": 2.3010657727718353
+          "lon": 2.3010657727718353,
+          "time": "12h24"
         },
         {
           "id": "station_15003",
           "name": "Gare Montparnasse - Vaugirard",
-          "time": "10h32",
           "lat": 48.8418071798797,
-          "lon": 2.31951002690117
+          "lon": 2.31951002690117,
+          "time": "12h41"
         }
       ],
       "segments": [
         {
-          "depart": "05h56",
-          "arrive": "06h03"
+          "depart": "07h56",
+          "arrive": "08h03"
         },
         {
-          "depart": "07h51",
-          "arrive": "08h02"
+          "depart": "09h51",
+          "arrive": "10h02"
         },
         {
-          "depart": "09h45",
-          "arrive": "10h24"
+          "depart": "11h45",
+          "arrive": "12h24"
         },
         {
-          "depart": "10h32",
-          "arrive": "10h41"
+          "depart": "12h32",
+          "arrive": "12h41"
         }
       ]
     },
