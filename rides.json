@@ -386,6 +386,13 @@
           "lat": 48.88666162207,
           "lon": 2.2843274474144,
           "time": "21h34"
+        },
+        {
+          "id": "station_23005",
+          "name": "Gare de Clichy-Levallois ",
+          "lat": 48.89679827481989,
+          "lon": 2.2984680533409123,
+          "time": "21h53"
         }
       ],
       "segments": [
@@ -436,6 +443,10 @@
         {
           "depart": "20h57",
           "arrive": "21h34"
+        },
+        {
+          "depart": "21h47",
+          "arrive": "21h53"
         }
       ]
     }
@@ -699,6 +710,22 @@
         "start_time": "2026-03-26T19:57:44.971Z",
         "end_time": "2026-03-26T20:34:14.941Z",
         "status": "completed"
+      },
+      {
+        "id": "ada4c994-6dfb-4a85-8940-42af1ed1329b",
+        "start_station_id": "station_23011",
+        "end_station_id": "station_23005",
+        "start_time": "2026-03-26T20:47:15.292Z",
+        "end_time": "2026-03-26T20:53:28.171Z",
+        "status": "completed"
+      },
+      {
+        "id": "92af98da-4b40-4263-ab27-821db1d0835b",
+        "start_station_id": "station_23005",
+        "end_station_id": null,
+        "start_time": "2026-03-26T20:56:22.744Z",
+        "end_time": null,
+        "status": "ongoing"
       }
     ]
   },
@@ -741,6 +768,7 @@
     "48.82470,2.36311->48.79858,2.38213": "aa_iHaplMxFqNfH{Qv@oBFVPt@d@bBLVr@|CpA|FXEj@BJ^`ApEFAHExDsBv@s@xAuAXWl@a@b@W~@y@X]lA_AxAkApBwAvHkFRQ|@o@fCgB~AkAxCyBnEaD|MwJvDqCvF_ErDcCj@Y|BcBvAeAh@UZSvAcAj@a@V]\\WnDgCvAcA~@{@rAiApAkA~@m@b@a@TYd@[jAs@dBoATQGUScA",
     "48.79858,2.38213->48.82048,2.36683": "g~yhHggpMJd@m@^oB|Ao@j@{A|@k@p@}BrBs@p@cAx@wAfAoDfC]T[LgBnAy@n@]\\WT}AhAeBbAwA`A}EvCyEdDcE`D{AbA_Ar@mHlFcAx@oAz@iBrAwCxBaEvCwClBmBvAqA~@ILc@\\oBxAqCvBgA~@{CzBkAx@M?MCSMQGUAaEKo@{C",
     "48.82048,2.36683->48.82631,2.34459": "}f~hHwgmMn@zC]CY@MBNp@Jd@hAbF`@hBz@zDXrA@PN|@VhDDhABtBJfD_Cj@iJnBoFbAiCn@gH`Bw@LwBb@q@LSD@VFbDFpCJ~FHvCLrERnLThKFdEAjAWlCInA_@bGSpBy@k@",
-    "48.82631,2.34459->48.88666,2.28433": "al_iH{zhM`@ZVNEb@MdB_@`FMd@W~AAhA?Tm@`Ia@lFgAvNUhCqCp@uAd@sDbAyCt@aGbBoCr@_Cn@WFM?MCICc@?m@s@YQS?_@JWPUd@MRg@tAWZk@RYH}@^{A^wDbAaHlBcDz@eBh@mIzBcAV]FOCq@NsAV{GpA{B\\yA`@e@JkBPeDl@oA\\gBXmE`AuMjCoCj@}B^cALeEv@kCh@}GrAs@LOC[q@[c@Q_@A?KGMS[s@Ym@q@wAMWQQwAaAYKQCgAq@mCeBoCeBSv@u@lDeA~EuAlGk@nCm@~Cw@bEcAjFED}B~KWjAYrA[SkBmAmAu@YUCMGGSOIMIf@iAfFMd@OVIVKNCZA`@?bBH`KFhI?t@}@G_BKsAG_DQcDQQ@UFSA_@fBo@rCSx@kBxI[vA_@rAi@dCyCdN{DnQ{@`EW~@cAzEu@dD{AvG}ApHOv@Kf@s@[QC]Gg@AS?i@NUJULc@Xs@`A[p@W~@{CsBoA{@uAy@YAq@e@c@[KU_@[]Y_@a@YvBEh@@LOfAe@`DYpBOfA[rBObAy@YwD}AsEgByAo@oB}@sAc@cDsAoEiBGKy@_@Ai@I]MYQSUIUAWHUTQb@G^?`@B^J\\T\\RL[lEGhADZWxDInAGn@]tFMTEn@IlAk@dJQnBEV@f@QvDUhDa@`Ia@~F"
+    "48.82631,2.34459->48.88666,2.28433": "al_iH{zhM`@ZVNEb@MdB_@`FMd@W~AAhA?Tm@`Ia@lFgAvNUhCqCp@uAd@sDbAyCt@aGbBoCr@_Cn@WFM?MCICc@?m@s@YQS?_@JWPUd@MRg@tAWZk@RYH}@^{A^wDbAaHlBcDz@eBh@mIzBcAV]FOCq@NsAV{GpA{B\\yA`@e@JkBPeDl@oA\\gBXmE`AuMjCoCj@}B^cALeEv@kCh@}GrAs@LOC[q@[c@Q_@A?KGMS[s@Ym@q@wAMWQQwAaAYKQCgAq@mCeBoCeBSv@u@lDeA~EuAlGk@nCm@~Cw@bEcAjFED}B~KWjAYrA[SkBmAmAu@YUCMGGSOIMIf@iAfFMd@OVIVKNCZA`@?bBH`KFhI?t@}@G_BKsAG_DQcDQQ@UFSA_@fBo@rCSx@kBxI[vA_@rAi@dCyCdN{DnQ{@`EW~@cAzEu@dD{AvG}ApHOv@Kf@s@[QC]Gg@AS?i@NUJULc@Xs@`A[p@W~@{CsBoA{@uAy@YAq@e@c@[KU_@[]Y_@a@YvBEh@@LOfAe@`DYpBOfA[rBObAy@YwD}AsEgByAo@oB}@sAc@cDsAoEiBGKy@_@Ai@I]MYQSUIUAWHUTQb@G^?`@B^J\\T\\RL[lEGhADZWxDInAGn@]tFMTEn@IlAk@dJQnBEV@f@QvDUhDa@`Ia@~F",
+    "48.88666,2.28433->48.89680,2.29847": "edkiH}c}LR{CLcBKUa@u@S_@m@}AyByFMY}@{B@CBI@KCOKGKDqCkH[w@WXqC{BAAcCkByC_DoDqDwEaFiBkBW[uDyDqAsAgAiAQ[_AuA]i@g@q@EIOFULe@aBKa@"
   }
 }
