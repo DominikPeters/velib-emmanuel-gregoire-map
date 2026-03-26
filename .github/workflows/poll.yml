@@ -2,7 +2,7 @@ name: Poll bike tracker
 
 on:
   schedule:
-    - cron: '0 * * * *'  # every hour
+    - cron: '0,30 * * * *'  # every 30 minutes
   workflow_dispatch: {}
 
 jobs:
