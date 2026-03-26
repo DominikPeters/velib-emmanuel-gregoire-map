@@ -365,6 +365,20 @@
           "lat": 48.7985844,
           "lon": 2.3821302,
           "time": "16h43"
+        },
+        {
+          "id": "station_13117",
+          "name": "Stade Georges Carpentier",
+          "lat": 48.820482438381,
+          "lon": 2.3668321967125,
+          "time": "19h49"
+        },
+        {
+          "id": "station_13048",
+          "name": "Wurtz - Tolbiac",
+          "lat": 48.82631195621,
+          "lon": 2.344585955143,
+          "time": "20h18"
         }
       ],
       "segments": [
@@ -403,6 +417,14 @@
         {
           "depart": "19h26",
           "arrive": "19h38"
+        },
+        {
+          "depart": "19h41",
+          "arrive": "19h49"
+        },
+        {
+          "depart": "20h08",
+          "arrive": "20h18"
         }
       ]
     }
@@ -646,10 +668,18 @@
       {
         "id": "85d588a0-16f4-4926-9dfe-1a9918435e32",
         "start_station_id": "station_44006",
-        "end_station_id": null,
+        "end_station_id": "station_13117",
         "start_time": "2026-03-26T18:41:23.748Z",
-        "end_time": null,
-        "status": "ongoing"
+        "end_time": "2026-03-26T18:49:21.743Z",
+        "status": "completed"
+      },
+      {
+        "id": "5ed5ecd0-f9a5-42ec-8a75-beaad21e051f",
+        "start_station_id": "station_13117",
+        "end_station_id": "station_13048",
+        "start_time": "2026-03-26T19:08:59.070Z",
+        "end_time": "2026-03-26T19:18:54.245Z",
+        "status": "completed"
       }
     ]
   },
@@ -689,6 +719,8 @@
     "48.88131,2.29485->48.84097,2.26439": "mcjiHoe_MiAwCk@gAx@^lAj@jAd@tFxBbDtA`@J~@Iv@G~AQvEc@jEa@~BOfAKb@K@HBPBRL^LTXV\\HRAVGPMVa@Ja@Fo@?e@Ko@CKbBsAMe@Sc@QS[Ub@sBTcAdBuH~@cEl@wCLq@JJb@F`FStBMbGS`DQp@GbBGnEQxDOd@J`AHVEl@g@j@CxAIh@CjAEn@?z@TDlCHpBN|BRjBn@~D~@xDd@zAZx@l@tAd@x@JPZd@j@z@Pl@Vd@d@v@f@x@fCdEvDhGz@pANPRFz@vATb@f@j@`@`@`Af@vC|@n@P\\R|@b@n@b@h@r@z@dA`AbBhFbIbBdCfC~DpArBf@r@N^^p@R^j@x@HDt@jAh@v@t@hAF\\`@n@v@hAnApBNFLTtAxBdA`BX`@r@`APVHPdA~ApAdBVn@dApBPVM`@Wv@kB`GaAvCvCfC`E~DtCrCXXCBOJqBb@YHTVfBhBtGvGf@f@t@z@Vd@fBfEvF~MRd@Y|@}@hCe@rAPLBBNHRk@^kAFO",
     "48.84097,2.26439->48.84264,2.34459": "igbiHsgyLx@{BwB_FcC}F}@{Bq@aBq@{AKOu@{@eDgDuGyGnBc@ZINKFM?IEKkBiB[YIOIOwBoB{AwA_@c@qA_Bc@a@o@c@q@e@wAqAeBaBgBiBm@_AwAkBu@gA{BuDsAyBiBgCkBoCg@m@k@k@]i@Yq@q@sAcCwDs@oAcEiGqAiBcHqKiBiBy@y@c@[g@k@_BsBUYCMU_@QWoDoEqBeCaE}FuEoGS_@E?Ma@a@aBs@gDm@uCWkAOeAu@aG[aCMiA@_@Ag@y@kKg@b@f@c@j@CxAIh@CjAEn@?z@TIqA?k@@c@@_@@W?w@C}EIoHGyKAaKIgEe@}EI{C?iAE{ICiDBcMFcAhAqFRg@LOR]p@q@fBaBzBsBjDkD~CqClG{FzC_D`CeDp@gAL_@f@yAt@{Bt@wBHa@xBoL|@gFj@}Dv@iFbBaLnAkIvEyZvAwIZLpAd@dBv@z@uC^_BRmA\\_C`Br@vBx@XRdAd@`CfAzAp@`@PFa@TmBPiADIBETSv@k@DAESDG\\gC?APFJw@l@VrDvAXF`@TlBv@|@Zx@ZjBr@Fa@",
     "48.84264,2.34459->48.82470,2.36311": "iqbiHq|hMG`@h@XnAh@jBv@\\PHVLQ\\iA|CqK|AqF`BoFbCsIRw@FWDKFSFElAw@lC_BpCeBlIiF~DaClBkAlBkAfAs@LINA~@i@b@OBDLTZZZJXA\\SPSDKLe@TmAN{@Fw@XUPMlCqBpBwAxCyBfAu@r@i@JEzAgAzDsCr@i@?YHQb@cA`AeCrCeHj@wA",
-    "48.82470,2.36311->48.79858,2.38213": "aa_iHaplMxFqNfH{Qv@oBFVPt@d@bBLVr@|CpA|FXEj@BJ^`ApEFAHExDsBv@s@xAuAXWl@a@b@W~@y@X]lA_AxAkApBwAvHkFRQ|@o@fCgB~AkAxCyBnEaD|MwJvDqCvF_ErDcCj@Y|BcBvAeAh@UZSvAcAj@a@V]\\WnDgCvAcA~@{@rAiApAkA~@m@b@a@TYd@[jAs@dBoATQGUScA"
+    "48.82470,2.36311->48.79858,2.38213": "aa_iHaplMxFqNfH{Qv@oBFVPt@d@bBLVr@|CpA|FXEj@BJ^`ApEFAHExDsBv@s@xAuAXWl@a@b@W~@y@X]lA_AxAkApBwAvHkFRQ|@o@fCgB~AkAxCyBnEaD|MwJvDqCvF_ErDcCj@Y|BcBvAeAh@UZSvAcAj@a@V]\\WnDgCvAcA~@{@rAiApAkA~@m@b@a@TYd@[jAs@dBoATQGUScA",
+    "48.79858,2.38213->48.82048,2.36683": "g~yhHggpMJd@m@^oB|Ao@j@{A|@k@p@}BrBs@p@cAx@wAfAoDfC]T[LgBnAy@n@]\\WT}AhAeBbAwA`A}EvCyEdDcE`D{AbA_Ar@mHlFcAx@oAz@iBrAwCxBaEvCwClBmBvAqA~@ILc@\\oBxAqCvBgA~@{CzBkAx@M?MCSMQGUAaEKo@{C",
+    "48.82048,2.36683->48.82631,2.34459": "}f~hHwgmMn@zC]CY@MBNp@Jd@hAbF`@hBz@zDXrA@PN|@VhDDhABtBJfD_Cj@iJnBoFbAiCn@gH`Bw@LwBb@q@LSD@VFbDFpCJ~FHvCLrERnLThKFdEAjAWlCInA_@bGSpBy@k@"
   }
 }
