@@ -399,6 +399,10 @@
         {
           "depart": "16h00",
           "arrive": "16h43"
+        },
+        {
+          "depart": "19h26",
+          "arrive": "19h38"
         }
       ]
     }
@@ -630,6 +634,22 @@
         "start_time": "2026-03-26T15:00:38.371Z",
         "end_time": "2026-03-26T15:43:12.857Z",
         "status": "completed"
+      },
+      {
+        "id": "098fd78c-907d-41eb-89da-9b9c0f4fc4e7",
+        "start_station_id": "station_44006",
+        "end_station_id": "station_44006",
+        "start_time": "2026-03-26T18:26:44.228Z",
+        "end_time": "2026-03-26T18:38:25.875Z",
+        "status": "completed"
+      },
+      {
+        "id": "85d588a0-16f4-4926-9dfe-1a9918435e32",
+        "start_station_id": "station_44006",
+        "end_station_id": null,
+        "start_time": "2026-03-26T18:41:23.748Z",
+        "end_time": null,
+        "status": "ongoing"
       }
     ]
   },
