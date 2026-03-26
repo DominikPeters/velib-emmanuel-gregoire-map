@@ -300,6 +300,30 @@
           "arrive": "22h00"
         }
       ]
+    },
+    "2026-03-26": {
+      "stations": [
+        {
+          "id": "station_12109",
+          "name": "Mairie du 12ème",
+          "lat": 48.840855311763,
+          "lon": 2.3875549435616,
+          "time": "05h01"
+        },
+        {
+          "id": "station_7026",
+          "name": "Place de Finlande",
+          "lat": 48.862408335967,
+          "lon": 2.3113624379039,
+          "time": "05h22"
+        }
+      ],
+      "segments": [
+        {
+          "depart": "05h01",
+          "arrive": "05h22"
+        }
+      ]
     }
   },
   "rides_raw": {
@@ -464,6 +488,16 @@
         "end_time": "2026-03-25T23:55:57.703Z",
         "status": "completed"
       }
+    ],
+    "2026-03-26": [
+      {
+        "id": "7c2e5be9-e6d4-45c9-87bc-6ad3c89c2247",
+        "start_station_id": "station_12109",
+        "end_station_id": "station_7026",
+        "start_time": "2026-03-26T04:01:59.297Z",
+        "end_time": "2026-03-26T04:22:05.357Z",
+        "status": "completed"
+      }
     ]
   },
   "route_cache": {
@@ -494,6 +528,7 @@
     "48.85190,2.34784->48.85031,2.34502": "gkdiHqqiMHHR\\p@bBbB`G\\jA^R`Ad@RHAVAP",
     "48.85031,2.34502->48.85292,2.35220": "cadiHi_iMBi@m@WgAk@q@cCsAuEw@iBQSy@k@]MKKOKMKuE_D~@qEd@yBXeAr@iDD]i@BG@",
     "48.85292,2.35220->48.85621,2.35325": "uqdiHaljM_BNc@H_@No@Z_@\\aA~@e@p@g@dAk@`BgAu@mAy@Ic@I_@X}@r@kC\\}ALc@}@c@oAu@a@Q",
-    "48.85621,2.35325->48.84086,2.38755": "efeiHosjMsBaAc@Yt@gFNuAvAuIh@iDj@kEn@{E^kCh@oD~@yCt@iCh@}BfA_F^wB`@oCTcBFs@PkCNyBJaAKEICKGSWEQEu@Di@J]TURKVDVJpAd@N@PCp@WbAa@vAe@NOlDmA|Ai@tAa@d@GZQQ}@j@gAXs@pEmLfHcRdEaLzEcM\\}@x@{B|@_CjDaJ`AoCzAkEt@iBXy@FY\\^B?H@NM@CZYb@a@"
+    "48.85621,2.35325->48.84086,2.38755": "efeiHosjMsBaAc@Yt@gFNuAvAuIh@iDj@kEn@{E^kCh@oD~@yCt@iCh@}BfA_F^wB`@oCTcBFs@PkCNyBJaAKEICKGSWEQEu@Di@J]TURKVDVJpAd@N@PCp@WbAa@vAe@NOlDmA|Ai@tAa@d@GZQQ}@j@gAXs@pEmLfHcRdEaLzEcM\\}@x@{B|@_CjDaJ`AoCzAkEt@iBXy@FY\\^B?H@NM@CZYb@a@",
+    "48.84086,2.38755->48.86241,2.31136": "sfbiHuiqM_A|@QNKAIEUYERQh@q@~Au@zB_BnEoFtNsGvPuGdQqK`YyApD_@v@S^UVo@n@m@^QP}Ah@mDlAONwAd@cA`@q@VQBOAqAe@WKWESJUTK\\Eh@Dt@DPRVTJf@Ph@Z^tBp@nDzCnO`B|HJ`@BN]V_@l@cAfBaAhBGLANOXOb@S|@kAnEOf@R^g@nBY`Bm@vBgAlFi@dCm@xBK^yB`Ge@nASt@Qp@Gj@a@tAWr@k@jAO`@g@`Ci@|BKZs@hCi@xCeAxF_A|FyAdIg@zBe@lC[pCQhBg@xDQr@[dAWr@K`@Gv@[vEUpEEv@QpAo@nEkAhIoAhJw@nFWrA}Hn]uCbM_BdHq@PWfA]vA[tA|@d@J?PJHDJEXTh@\\pAz@xA|@AL]`BOv@I`@AlABlNDrAHh@@bABxClDRrDTGlEGfD@jB?nBaG[CmA?mB"
   }
 }
