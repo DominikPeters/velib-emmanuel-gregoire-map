@@ -913,59 +913,44 @@
             }
             const nextIdx = passedIdx < sm.length - 1 ? passedIdx + 1 : null;
 
-            // Build trail: up to 3 most recent visited stations
-            const MAX_TRAIL = 3;
-            const trailIndices = [];
-            for (let i = passedIdx; i >= Math.max(0, passedIdx - MAX_TRAIL + 1); i--) {
-              trailIndices.push(i);
+            // Candidates in priority order: trail [0,1,2] then upcoming
+            const candidates = [];
+            for (let i = passedIdx; i >= Math.max(0, passedIdx - 2); i--) candidates.push(i);
+            if (nextIdx !== null) candidates.push(nextIdx);
+
+            // Open all candidates so their bounding boxes are measurable
+            candidates.forEach(i => {
+              if (stationMarkers[i] && !stationMarkers[i].isTooltipOpen())
+                stationMarkers[i].openTooltip();
+            });
+
+            // Greedily accept candidates in priority order using bounding box overlap
+            function rectsOverlap(a, b) {
+              return !(a.right < b.left || b.right < a.left || a.bottom < b.top || b.bottom < a.top);
             }
 
-            // Clutter check: remove oldest trail entries if labels overlap (<80px apart)
-            function pixelDist(idxA, idxB) {
-              const mA = stationMarkers[idxA], mB = stationMarkers[idxB];
-              if (!mA || !mB) return 9999;
-              const pA = map.latLngToContainerPoint(mA.getLatLng());
-              const pB = map.latLngToContainerPoint(mB.getLatLng());
-              return Math.hypot(pA.x - pB.x, pA.y - pB.y);
-            }
-
-            // Trim trail from oldest end until no pair is too close
-            while (trailIndices.length > 1) {
-              let crowded = false;
-              for (let a = 0; a < trailIndices.length - 1; a++) {
-                for (let b = a + 1; b < trailIndices.length; b++) {
-                  if (pixelDist(trailIndices[a], trailIndices[b]) < 80) { crowded = true; break; }
-                }
-                if (crowded) break;
+            const accepted = []; // {idx, rect}
+            const desired = new Set();
+            for (const i of candidates) {
+              const m = stationMarkers[i];
+              if (!m) continue;
+              const el = m.getTooltip()?.getElement();
+              if (!el) continue;
+              const rect = el.getBoundingClientRect();
+              if (accepted.every(a => !rectsOverlap(a.rect, rect))) {
+                accepted.push({ idx: i, rect });
+                desired.add(i);
               }
-              if (!crowded) break;
-              trailIndices.pop(); // drop oldest
             }
 
-            // Also check upcoming vs nearest trail entry
-            let showNext = nextIdx !== null;
-            if (showNext && trailIndices.length > 0 && pixelDist(nextIdx, trailIndices[0]) < 80) {
-              showNext = false;
-            }
-
-            // Determine desired open set
-            const desired = new Set(trailIndices);
-            if (showNext) desired.add(nextIdx);
-
-            // Open/close tooltips and set opacity
+            // Apply opacities; close tooltips not in desired set
+            const trailOpacity = [1.0, 0.7, 0.45];
             stationMarkers.forEach((m, i) => {
               const tooltip = m.getTooltip();
               if (!tooltip) return;
               if (desired.has(i)) {
-                if (!m.isTooltipOpen()) m.openTooltip();
-                const trailPos = trailIndices.indexOf(i);
-                let opacity;
-                if (i === nextIdx) {
-                  opacity = 0.5; // upcoming: dimmer
-                } else {
-                  // trail: most recent = 1.0, older = fading
-                  opacity = 1.0 - trailPos * (0.25);
-                }
+                const trailPos = candidates.indexOf(i);
+                const opacity = i === nextIdx ? 0.5 : (trailOpacity[trailPos] ?? 0.45);
                 const el = tooltip.getElement();
                 if (el) el.style.opacity = opacity;
               } else {
