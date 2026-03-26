@@ -286,6 +286,7 @@
       background: none !important;
       box-shadow: none !important;
       padding: 0 !important;
+      transition: opacity 0.4s ease !important;
     }
 
     .station-popup .leaflet-popup-content-wrapper {
@@ -413,6 +414,7 @@
       let selectedDay = allDays[allDays.length - 1];
       let mapLayers = [];
       let animState = null;
+      let stationMarkers = [];   // markers for active day stations
 
       // Animation state
       let animMinutes = 0;   // minutes since the selected day start (03:00)
@@ -617,6 +619,7 @@
         mapLayers.forEach(l => map.removeLayer(l));
         mapLayers = [];
         animState = null;
+        stationMarkers = [];
         const allBounds = [];
         const activeBounds = [];
 
@@ -693,9 +696,10 @@
             .bindPopup(`<b>${s.name}</b><br>${s.time} · ${formatDateFr(selectedDay)}`, { className: 'station-popup' })
             .bindTooltip(
               `<div class="station-label"><span class="stime">${s.time}</span> ${short}</div>`,
-              { permanent: true, direction: tooltipDirs[i % tooltipDirs.length], offset: [r + 4, 0] }
+              { permanent: false, direction: tooltipDirs[i % tooltipDirs.length], offset: [r + 4, 0] }
             );
           mapLayers.push(marker);
+          stationMarkers.push(marker);
           allBounds.push([s.lat, s.lon]);
           activeBounds.push([s.lat, s.lon]);
         });
@@ -704,6 +708,10 @@
           map.invalidateSize();
           requestAnimationFrame(() => {
             map.fitBounds(L.latLngBounds(activeBounds).pad(0.1));
+            // Show first station label on load
+            if (stationMarkers.length > 0) {
+              stationMarkers[0].openTooltip();
+            }
           });
         }
 
@@ -834,7 +842,7 @@
           return { pt: [a[0] + (b[0] - a[0]) * frac, a[1] + (b[1] - a[1]) * frac], segIdx: fullPath[lo].segIdx };
         }
 
-        animState = { minutesToProgress, getPointAtProgress, totalMinutes, firstMins, lastMins, timeline, isPauseAtMinutes };
+        animState = { minutesToProgress, getPointAtProgress, totalMinutes, firstMins, lastMins, timeline, isPauseAtMinutes, stationMins };
         animMinutes = 0;
         lastTime = null;
       }
@@ -892,6 +900,79 @@
           dotEl.style.display = '';
 
           updatePlayhead();
+
+          // Update station labels: trail of visited + upcoming
+          if (stationMarkers.length > 0 && animState.stationMins) {
+            const currentAbsMins = animState.firstMins + currentMinutes;
+            const sm = animState.stationMins;
+
+            // Find current station index (last one passed)
+            let passedIdx = 0;
+            for (let i = 0; i < sm.length; i++) {
+              if (sm[i] <= currentAbsMins) passedIdx = i;
+            }
+            const nextIdx = passedIdx < sm.length - 1 ? passedIdx + 1 : null;
+
+            // Build trail: up to 3 most recent visited stations
+            const MAX_TRAIL = 3;
+            const trailIndices = [];
+            for (let i = passedIdx; i >= Math.max(0, passedIdx - MAX_TRAIL + 1); i--) {
+              trailIndices.push(i);
+            }
+
+            // Clutter check: remove oldest trail entries if labels overlap (<80px apart)
+            function pixelDist(idxA, idxB) {
+              const mA = stationMarkers[idxA], mB = stationMarkers[idxB];
+              if (!mA || !mB) return 9999;
+              const pA = map.latLngToContainerPoint(mA.getLatLng());
+              const pB = map.latLngToContainerPoint(mB.getLatLng());
+              return Math.hypot(pA.x - pB.x, pA.y - pB.y);
+            }
+
+            // Trim trail from oldest end until no pair is too close
+            while (trailIndices.length > 1) {
+              let crowded = false;
+              for (let a = 0; a < trailIndices.length - 1; a++) {
+                for (let b = a + 1; b < trailIndices.length; b++) {
+                  if (pixelDist(trailIndices[a], trailIndices[b]) < 80) { crowded = true; break; }
+                }
+                if (crowded) break;
+              }
+              if (!crowded) break;
+              trailIndices.pop(); // drop oldest
+            }
+
+            // Also check upcoming vs nearest trail entry
+            let showNext = nextIdx !== null;
+            if (showNext && trailIndices.length > 0 && pixelDist(nextIdx, trailIndices[0]) < 80) {
+              showNext = false;
+            }
+
+            // Determine desired open set
+            const desired = new Set(trailIndices);
+            if (showNext) desired.add(nextIdx);
+
+            // Open/close tooltips and set opacity
+            stationMarkers.forEach((m, i) => {
+              const tooltip = m.getTooltip();
+              if (!tooltip) return;
+              if (desired.has(i)) {
+                if (!m.isTooltipOpen()) m.openTooltip();
+                const trailPos = trailIndices.indexOf(i);
+                let opacity;
+                if (i === nextIdx) {
+                  opacity = 0.5; // upcoming: dimmer
+                } else {
+                  // trail: most recent = 1.0, older = fading
+                  opacity = 1.0 - trailPos * (0.25);
+                }
+                const el = tooltip.getElement();
+                if (el) el.style.opacity = opacity;
+              } else {
+                if (m.isTooltipOpen()) m.closeTooltip();
+              }
+            });
+          }
         } else {
           dotEl.style.display = 'none';
           playhead.style.display = 'none';

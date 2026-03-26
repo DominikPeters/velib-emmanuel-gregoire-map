@@ -122,8 +122,25 @@ def main():
             known_ids.add(ride["id"])
 
     new_count = 0
+    updated_count = 0
+    # Build index of stored rides by id for fast update lookup
+    stored_by_id = {}
+    for day_rides in rides_raw.values():
+        for ride in day_rides:
+            stored_by_id[ride["id"]] = ride
+
     for ride in rides:
-        if ride["id"] in known_ids:
+        stored = stored_by_id.get(ride["id"])
+        if stored is not None:
+            # Update ongoing rides that are now completed
+            if stored["status"] == "ongoing" and ride["status"] == "completed":
+                stored.update({
+                    "end_station_id": ride["end_station_id"],
+                    "end_time": ride["end_time"],
+                    "status": "completed",
+                })
+                updated_count += 1
+                print(f"  Updated ride: → {ride['end_station_id']} ({ride['end_time']})")
             continue
 
         day_key = ride_day(ride["start_time"])
@@ -142,8 +159,10 @@ def main():
         new_count += 1
         print(f"  New ride: {ride['start_station_id']} → {ride['end_station_id']} ({ride['start_time']})")
 
-    if new_count == 0:
+    if new_count == 0 and updated_count == 0:
         print("No new rides found.")
+    if updated_count > 0:
+        print(f"  {updated_count} ongoing ride(s) updated to completed.")
 
     # Rebuild station lists per day from raw rides
     for day_key, day_rides in rides_raw.items():
@@ -217,7 +236,7 @@ def main():
     with open(RIDES_JSON, "w") as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
 
-    print(f"Done. {new_count} new rides. {len(days)} days tracked.")
+    print(f"Done. {new_count} new rides, {updated_count} updated. {len(days)} days tracked.")
 
 
 if __name__ == "__main__":
