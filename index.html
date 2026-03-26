@@ -388,7 +388,7 @@
     }
 
     // ── Load data and render ──────────────────────────────────────────────────────
-    fetch('rides.json').then(r => r.json()).then(data => {
+    fetch('rides.json?v=' + Date.now()).then(r => r.json()).then(data => {
       const routeCache = data.route_cache || {};
       const allDays = Object.keys(data.days).sort();
       const subtitleEl = document.getElementById('subtitle');
