@@ -469,9 +469,21 @@
           "lat": 48.91405323432864,
           "lon": 2.412636950612068,
           "time": "08h37"
+        },
+        {
+          "id": "station_23005",
+          "name": "Gare de Clichy-Levallois ",
+          "lat": 48.89679827481989,
+          "lon": 2.2984680533409123,
+          "time": "09h10"
         }
       ],
-      "segments": []
+      "segments": [
+        {
+          "depart": "08h37",
+          "arrive": "09h10"
+        }
+      ]
     }
   },
   "rides_raw": {
@@ -755,8 +767,16 @@
       {
         "id": "2a7663e3-0231-4b61-a460-eb526592436f",
         "start_station_id": "station_35015",
-        "end_station_id": null,
+        "end_station_id": "station_23005",
         "start_time": "2026-03-27T07:37:41.715Z",
+        "end_time": "2026-03-27T08:10:51.802Z",
+        "status": "completed"
+      },
+      {
+        "id": "519d4c79-3b90-411a-b702-fe221c497709",
+        "start_station_id": "station_23005",
+        "end_station_id": null,
+        "start_time": "2026-03-27T08:11:58.575Z",
         "end_time": null,
         "status": "ongoing"
       }
@@ -803,6 +823,7 @@
     "48.82048,2.36683->48.82631,2.34459": "}f~hHwgmMn@zC]CY@MBNp@Jd@hAbF`@hBz@zDXrA@PN|@VhDDhABtBJfD_Cj@iJnBoFbAiCn@gH`Bw@LwBb@q@LSD@VFbDFpCJ~FHvCLrERnLThKFdEAjAWlCInA_@bGSpBy@k@",
     "48.82631,2.34459->48.88666,2.28433": "al_iH{zhM`@ZVNEb@MdB_@`FMd@W~AAhA?Tm@`Ia@lFgAvNUhCqCp@uAd@sDbAyCt@aGbBoCr@_Cn@WFM?MCICc@?m@s@YQS?_@JWPUd@MRg@tAWZk@RYH}@^{A^wDbAaHlBcDz@eBh@mIzBcAV]FOCq@NsAV{GpA{B\\yA`@e@JkBPeDl@oA\\gBXmE`AuMjCoCj@}B^cALeEv@kCh@}GrAs@LOC[q@[c@Q_@A?KGMS[s@Ym@q@wAMWQQwAaAYKQCgAq@mCeBoCeBSv@u@lDeA~EuAlGk@nCm@~Cw@bEcAjFED}B~KWjAYrA[SkBmAmAu@YUCMGGSOIMIf@iAfFMd@OVIVKNCZA`@?bBH`KFhI?t@}@G_BKsAG_DQcDQQ@UFSA_@fBo@rCSx@kBxI[vA_@rAi@dCyCdN{DnQ{@`EW~@cAzEu@dD{AvG}ApHOv@Kf@s@[QC]Gg@AS?i@NUJULc@Xs@`A[p@W~@{CsBoA{@uAy@YAq@e@c@[KU_@[]Y_@a@YvBEh@@LOfAe@`DYpBOfA[rBObAy@YwD}AsEgByAo@oB}@sAc@cDsAoEiBGKy@_@Ai@I]MYQSUIUAWHUTQb@G^?`@B^J\\T\\RL[lEGhADZWxDInAGn@]tFMTEn@IlAk@dJQnBEV@f@QvDUhDa@`Ia@~F",
     "48.88666,2.28433->48.89680,2.29847": "edkiH}c}LR{CLcBKUa@u@S_@m@}AyByFMY}@{B@CBI@KCOKGKDqCkH[w@WXqC{BAAcCkByC_DoDqDwEaFiBkBW[uDyDqAsAgAiAQ[_AuA]i@g@q@EIOFULe@aBKa@",
-    "48.89680,2.29847->48.91405,2.41264": "wcmiHy|_MuAsDq@_C?OIWk@eBSq@m@iBu@yB_A_DyCuJaAuC{@_CdIiGn@e@~@s@PSp@eAbDcFxAoAJQ`@{@lCyFt@eBrAsCl@mARgAKe@a@yA}@_Dw@qCaCuIq@gCe@aBcDeLs@oCYcCCo@Cw@?}@AmF?gBEwEEeEGqLEwF?u@Ee@EgECyDGqNGgJAmFCsDEm@GyMGeJAgEG_CGqBCk@I{@IoAKmEAgDEuFEgBC}EAoE@iBAwAAsAAcBCqBEkB?qACWMm@C[GoAGqBCiCEoH?aAAwBCaDLMFEZQ@GKsLO{YCw@Em@?gHCk@EU@[Au@RA~@ABODYJc@DYsADo@?CkAAoCC_ECmEGoLE}ACoFCaHCiFE{GAyEAQX}BT]DKDQZ}Bl@yENsAo@q@qCuCoAuAaB_BWKMU[[_@K}@oA_@q@_@q@[_@}BmCw@aA_DmDuB}ByHsI{@y@Y_@{AgBUUoBoBcEuEmFeGq@}@oBoBmBsBqB{BuO{PuCgDaBmBVqCb@uCd@_Bt@}Bh@_Bt@uBIMIRGME_@GaAEKKkAq@iK@i@MqBEaA?a@HWRs@IIMM"
+    "48.89680,2.29847->48.91405,2.41264": "wcmiHy|_MuAsDq@_C?OIWk@eBSq@m@iBu@yB_A_DyCuJaAuC{@_CdIiGn@e@~@s@PSp@eAbDcFxAoAJQ`@{@lCyFt@eBrAsCl@mARgAKe@a@yA}@_Dw@qCaCuIq@gCe@aBcDeLs@oCYcCCo@Cw@?}@AmF?gBEwEEeEGqLEwF?u@Ee@EgECyDGqNGgJAmFCsDEm@GyMGeJAgEG_CGqBCk@I{@IoAKmEAgDEuFEgBC}EAoE@iBAwAAsAAcBCqBEkB?qACWMm@C[GoAGqBCiCEoH?aAAwBCaDLMFEZQ@GKsLO{YCw@Em@?gHCk@EU@[Au@RA~@ABODYJc@DYsADo@?CkAAoCC_ECmEGoLE}ACoFCaHCiFE{GAyEAQX}BT]DKDQZ}Bl@yENsAo@q@qCuCoAuAaB_BWKMU[[_@K}@oA_@q@_@q@[_@}BmCw@aA_DmDuB}ByHsI{@y@Y_@{AgBUUoBoBcEuEmFeGq@}@oBoBmBsBqB{BuO{PuCgDaBmBVqCb@uCd@_Bt@}Bh@_Bt@uBIMIRGME_@GaAEKKkAq@iK@i@MqBEaA?a@HWRs@IIMM",
+    "48.91405,2.41264->48.89680,2.29847": "appiHkevMVVJWd@oAf@yABGXBz@Ib@BNCLMJQNaAL]NUTKZCd@ZXf@PTPF\\\\Rf@Px@^b@FQz@}Bj@eBlAuErEoPbC{IhB{GZuA`@iCNkBDyBByCFu@Dg@Ds@PEP?j@zA|AfEhAdDfBfELL~AjE^~@pEvL~BhGbHdRrHbSFZf@rAhB|EbAhCbBjElBhFjClHtApDR|@PxAn@zGDb@@^Ob@Wv@CPy@bBeA~A[h@`Ah@h@Z|An@p@X?vB?t@JbD?d@AJANNfCL~AP|@VvAJp@DNTd@Nb@Nn@?Hc@RAF~B`HDBTK@@v@pBfGlOPd@KLEDEFGBDX?LAHAHY`@OR?FFB@DENIFa@@QDEBCTRl@Ph@AJBH?BEPUXq@\\OTCTBNAHoBtB}BdCyAdB[b@QNECSQ?BGRSf@PRl@j@p@t@\\`@H@xAlBx@~@HVJVJXl@rBPVjFlHlLlP|@hAd@z@j@t@zBzCdEtF`AlArAhB\\h@i@lA_@|@Kb@c@nBQ^Q\\Qx@sB_AGn@KlA{@lLMvBIhDIhFOrIA|BAnAEhBWzFMrBGjBATAZOXCjGApCIxGEdAKhAwAbN{@`Iw@fHQ~AM@YDMFgA|@{HhG[XkEfD_BnAm@^k@f@{@t@{AjAiCrBc@ZyBbBNtBJvM@hDBpC?|CBhHF|DBxELzOB|DBdECfA@xDH|JDvG@~AAjCBbB@tADj@BhCBlDJtARpAfA`E`AjDXpAdAvDNd@Xv@nAnEZrA^`Bb@lBl@zBD^Tx@d@bBj@jBn@nBx@pCh@dBVr@p@`Cr@vBv@vBRt@p@nB`AfCzDbKrDvJH`@MP{AzBeCpD_BvBc@f@wAfBuBvCu@fAk@~@_B|BoDnFMPcBbCKLMUKQy@mAo@_AYa@UJOHWy@GWEQK_@"
   }
 }
