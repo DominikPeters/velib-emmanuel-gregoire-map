@@ -790,6 +790,14 @@
         "start_time": "2026-03-27T08:11:58.575Z",
         "end_time": "2026-03-27T08:26:53.909Z",
         "status": "completed"
+      },
+      {
+        "id": "bd64bfee-5ab7-47da-b0bc-2dd6834e8c57",
+        "start_station_id": "station_22017",
+        "end_station_id": null,
+        "start_time": "2026-03-27T11:08:59.222Z",
+        "end_time": null,
+        "status": "ongoing"
       }
     ]
   },
