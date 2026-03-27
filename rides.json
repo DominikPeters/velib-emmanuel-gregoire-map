@@ -511,6 +511,13 @@
           "lat": 48.856399483950504,
           "lon": 2.275240458548069,
           "time": "17h12"
+        },
+        {
+          "id": "station_1117",
+          "name": "Pont Neuf - Rivoli",
+          "lat": 48.860089892617,
+          "lon": 2.344057559967,
+          "time": "17h36"
         }
       ],
       "segments": [
@@ -537,6 +544,10 @@
         {
           "depart": "16h37",
           "arrive": "17h12"
+        },
+        {
+          "depart": "17h14",
+          "arrive": "17h36"
         }
       ]
     }
@@ -870,10 +881,10 @@
       {
         "id": "91143ef5-d1ea-45f0-a906-032f13034471",
         "start_station_id": "station_16031",
-        "end_station_id": null,
+        "end_station_id": "station_1117",
         "start_time": "2026-03-27T16:14:47.616Z",
-        "end_time": null,
-        "status": "ongoing"
+        "end_time": "2026-03-27T16:36:51.297Z",
+        "status": "completed"
       }
     ]
   },
@@ -924,6 +935,7 @@
     "48.88174,2.27100->48.87521,2.28428": "sejiHspzLXqAv@f@b@Rv@wDH[`C_Lx@uD]YNs@p@aD`AqEj@aAVcAnAcGNu@HeAd@yBj@eCnCwLLi@`@aDlAgFl@oCViAZyARN^TAF?FHh@r@dDzAzH",
     "48.87521,2.28428->48.86642,2.28586": "}|hiHyc}LR`AHArB]fDi@z@O^@`C]~@M`@Un@KxAW|AYdCc@\\Eb@I?B@F@DDLDFJFL@JCHKFO@Ef@XhAp@nGxDpAv@JDBIP{@Ps@p@}Cr@aD",
     "48.86642,2.28586->48.85699,2.28217": "{egiHmm}L\\mAfF{@hIsANj@LTXVAn@?HDFBDb@@NCZS^[TYXg@Z}@R`@JJHDDX^E\\CP@^J`BbAx@p@bAl@nChBn@h@PJjAx@XJBHDDF@DAJK@E|CzCz@lAr@tAt@|AJRIJ_@d@",
-    "48.85699,2.28217->48.85640,2.27524": "kkeiH}v|Lh@q@r@tAvAhBbBtBdAjAXd@JZdAfEt@|BPd@FPITKTs@xAaAzAk@x@_@v@cAnBcAdCSb@IPa@Y"
+    "48.85699,2.28217->48.85640,2.27524": "kkeiH}v|Lh@q@r@tAvAhBbBtBdAjAXd@JZdAfEt@|BPd@FPITKTs@xAaAzAk@x@_@v@cAnBcAdCSb@IPa@Y",
+    "48.85640,2.27524->48.86009,2.34406": "ogeiHgk{LUAUTIZ@x@h@@HEVKfBi@|@W~Ae@|A]lAQlGcAd@u@n@aBx@kB~@}BnAmCg@_AQMkA_CkA_C]g@?k@CYOi@e@eA[gAe@eAIYyBmDcEmGkI_MeAcB[a@oCmCMM]UWYe@i@_BuBIW]g@sBgCkCeDuDkF_GcIYi@CAIMa@{A_B{Hk@sCs@sFa@aDEWIy@?Q@W?So@cIQaDCcAEW@_ACwBEo@SiBEa@C_@GgCOuXMkNUub@AcB?q@BUHSDKRa@rA{Fh@eCnBsI`ByH~AcHpFqV~@kEb@aCl@kE~@eHRcB`A_HfAuHZkHZ_FNmB`@uDl@aGXsBQ[uAeAmBoBi@c@}@o@"
   }
 }
