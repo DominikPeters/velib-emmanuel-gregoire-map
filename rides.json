@@ -904,6 +904,14 @@
         "start_time": "2026-03-27T16:56:27.057Z",
         "end_time": "2026-03-27T17:34:11.085Z",
         "status": "completed"
+      },
+      {
+        "id": "5c0d874a-1090-484d-a022-a36dd1029b3f",
+        "start_station_id": "station_22703",
+        "end_station_id": null,
+        "start_time": "2026-03-27T17:48:30.410Z",
+        "end_time": null,
+        "status": "ongoing"
       }
     ]
   },
