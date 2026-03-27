@@ -504,6 +504,13 @@
           "lat": 48.8569864146289,
           "lon": 2.282173218142987,
           "time": "16h24"
+        },
+        {
+          "id": "station_16031",
+          "name": "Vignes - Boulainvilliers",
+          "lat": 48.856399483950504,
+          "lon": 2.275240458548069,
+          "time": "17h12"
         }
       ],
       "segments": [
@@ -526,6 +533,10 @@
         {
           "depart": "15h46",
           "arrive": "16h24"
+        },
+        {
+          "depart": "16h37",
+          "arrive": "17h12"
         }
       ]
     }
@@ -851,8 +862,16 @@
       {
         "id": "26d07e23-244e-453f-97cc-8b59cb468c64",
         "start_station_id": "station_16112",
-        "end_station_id": null,
+        "end_station_id": "station_16031",
         "start_time": "2026-03-27T15:37:19.217Z",
+        "end_time": "2026-03-27T16:12:51.420Z",
+        "status": "completed"
+      },
+      {
+        "id": "91143ef5-d1ea-45f0-a906-032f13034471",
+        "start_station_id": "station_16031",
+        "end_station_id": null,
+        "start_time": "2026-03-27T16:14:47.616Z",
         "end_time": null,
         "status": "ongoing"
       }
@@ -904,6 +923,7 @@
     "48.89680,2.29847->48.88174,2.27100": "ucmiHq|_Mp@bCnBlGjCzHrBtGnCbIhHrTdFpOp@lBZhAb@bB|@jCpBdGv@|BtA`EzCaD`@e@`CqCdBuBh@q@?F@JFNyAxOm@xG]dDs@rHe@xEh@NjKrEtB|@|EtBz@ZKj@A`@@\\FTHNHHfElBtCrA`@Rx@^S|@ER",
     "48.88174,2.27100->48.87521,2.28428": "sejiHspzLXqAv@f@b@Rv@wDH[`C_Lx@uD]YNs@p@aD`AqEj@aAVcAnAcGNu@HeAd@yBj@eCnCwLLi@`@aDlAgFl@oCViAZyARN^TAF?FHh@r@dDzAzH",
     "48.87521,2.28428->48.86642,2.28586": "}|hiHyc}LR`AHArB]fDi@z@O^@`C]~@M`@Un@KxAW|AYdCc@\\Eb@I?B@F@DDLDFJFL@JCHKFO@Ef@XhAp@nGxDpAv@JDBIP{@Ps@p@}Cr@aD",
-    "48.86642,2.28586->48.85699,2.28217": "{egiHmm}L\\mAfF{@hIsANj@LTXVAn@?HDFBDb@@NCZS^[TYXg@Z}@R`@JJHDDX^E\\CP@^J`BbAx@p@bAl@nChBn@h@PJjAx@XJBHDDF@DAJK@E|CzCz@lAr@tAt@|AJRIJ_@d@"
+    "48.86642,2.28586->48.85699,2.28217": "{egiHmm}L\\mAfF{@hIsANj@LTXVAn@?HDFBDb@@NCZS^[TYXg@Z}@R`@JJHDDX^E\\CP@^J`BbAx@p@bAl@nChBn@h@PJjAx@XJBHDDF@DAJK@E|CzCz@lAr@tAt@|AJRIJ_@d@",
+    "48.85699,2.28217->48.85640,2.27524": "kkeiH}v|Lh@q@r@tAvAhBbBtBdAjAXd@JZdAfEt@|BPd@FPITKTs@xAaAzAk@x@_@v@cAnBcAdCSb@IPa@Y"
   }
 }
