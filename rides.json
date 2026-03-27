@@ -460,6 +460,18 @@
           "arrive": "22h28"
         }
       ]
+    },
+    "2026-03-27": {
+      "stations": [
+        {
+          "id": "station_35015",
+          "name": "Averroès - Aimé Césaire",
+          "lat": 48.91405323432864,
+          "lon": 2.412636950612068,
+          "time": "08h37"
+        }
+      ],
+      "segments": []
     }
   },
   "rides_raw": {
@@ -737,6 +749,16 @@
         "start_time": "2026-03-26T20:56:22.744Z",
         "end_time": "2026-03-26T21:28:38.499Z",
         "status": "completed"
+      }
+    ],
+    "2026-03-27": [
+      {
+        "id": "2a7663e3-0231-4b61-a460-eb526592436f",
+        "start_station_id": "station_35015",
+        "end_station_id": null,
+        "start_time": "2026-03-27T07:37:41.715Z",
+        "end_time": null,
+        "status": "ongoing"
       }
     ]
   },
