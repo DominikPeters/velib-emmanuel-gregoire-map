@@ -1026,6 +1026,14 @@
         "start_time": "2026-03-28T11:19:00.146Z",
         "end_time": "2026-03-28T11:43:49.251Z",
         "status": "completed"
+      },
+      {
+        "id": "76cc66f4-b513-42e6-b61f-96f215f62fd5",
+        "start_station_id": "station_25008",
+        "end_station_id": null,
+        "start_time": "2026-03-28T19:51:24.505Z",
+        "end_time": null,
+        "status": "ongoing"
       }
     ]
   },
