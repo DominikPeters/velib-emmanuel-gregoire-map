@@ -689,6 +689,13 @@
           "lat": 48.85293603169479,
           "lon": 2.280449643731117,
           "time": "04h18"
+        },
+        {
+          "id": "station_15127",
+          "name": "Place Charles Michels",
+          "lat": 48.846401,
+          "lon": 2.28502,
+          "time": "07h28"
         }
       ],
       "segments": [
@@ -699,6 +706,10 @@
         {
           "depart": "03h58",
           "arrive": "04h18"
+        },
+        {
+          "depart": "07h25",
+          "arrive": "07h28"
         }
       ]
     }
@@ -1136,6 +1147,14 @@
         "start_time": "2026-03-29T01:58:04.788Z",
         "end_time": "2026-03-29T02:18:21.670Z",
         "status": "completed"
+      },
+      {
+        "id": "4de55b15-6c5f-4680-9ee5-a382c93d4387",
+        "start_station_id": "station_16024",
+        "end_station_id": "station_15127",
+        "start_time": "2026-03-29T05:25:43.830Z",
+        "end_time": "2026-03-29T05:28:44.439Z",
+        "status": "completed"
       }
     ]
   },
@@ -1198,6 +1217,7 @@
     "48.87219,2.32942->48.83548,2.34857": "kjhiH}}eMBu@AEEORc@Xq@N]Tk@d@u@jBkEPKjA]lAc@Xa@vDoAfAc@vGwBfFcBNGPEHOl@Up@UfEsApBs@pBo@r@O|@`@nAp@LLJRHb@bBvBDb@Pd@RNRDJANIVWL@pAn@ZNHCVFt@ZDQFs@`A_HfAuHZkHZ_FNmB`@uDl@aGXsBrAmHzAsIv@gETiAR^BBlBbA`A`@`Al@fAn@dAt@nGtGDFERp@jAD]P[fC~@vDvAt@ZbBn@vAj@tCvAjFpCdEzBfAh@nAd@`@_@\\S`C_A~JeEdHmC`GeCLQ\\iA|CqK|AqF`BoFx@yCl@uBPHx@Z|@ZlDpAz@XxAn@`Bf@bA`@Ou@PFLCNG",
     "48.83548,2.34857->48.85621,2.35325": "}daiH{uiMOFMBQGQ?QFOJaBg@eCcAaBk@yCgAy@[QIm@tBy@xC{@pCaBxFeBzFwBtHMPa@PsBz@yClAoHrCuJ~DsAh@]Ra@^q@U}@_@{GqDkFqCoAm@mAg@mAe@mBw@_IwCw@[KIMMsAuAaEeE_BcAaBcAaAa@yAw@QICCUa@DUCIIOACKMWQu@_@aD{AFQpAeG~@}DbAuFP{Ax@iFNeA\\VJD^PlAj@",
     "48.85621,2.35325->48.83548,2.34857": "efeiHosjMsBaAc@YiAnHe@fDo@hD_A|DVz@VNHFVRBD~@[~Ap@tBbAnJpEbAb@bB~@\\Nd@T`@TRk@|@{Bv@{BJJ\\Ln@b@PNR\\`Am@vBsAhIcGl@]hA{@tA_AfBuA~@o@vAaAl@c@h@QdAW~Aa@fEiANCdAHbF^pHh@~ALN@LPbA^HKfAf@b@Tf@TxCtAFBHNNZRp@B^_@nAl@V|CjApBp@~@\\nAh@dAZ~Al@Ou@PFTGFC",
-    "48.83548,2.34857->48.85294,2.28045": "}daiH{uiMOFMBQGTlAd@vBnAxFFd@B~BBfBgAIwASeBQ{Da@CCaAMoBzNc@zCcBlNkAdHaAvFUfAONUbA{@xDyApGMCWjA_BfHq@tCmBnIaC`KoDnOo@`DiAnFsDbP]xA_@nAcDzH_AvB[j@q@n@Pp@zBnKpC|MTnAPv@OlBKv@{@nEiA`GqDtReDnP_@|BC@INARBPQRGVuAxGsApGqA|FeEnRe@pBm@jCSp@Q^KLk@f@{DxDiBlBiCjCiCdCy@v@oA`BcE~DeD`DKFKAMI{BgDQWIc@JJf@f@n@n@f@d@j@x@hFbIjAbBpDpFvAxBxBlD~@dBRf@ELAJXj@HTFNJh@@x@a@o@STMOA?A?MZ"
+    "48.83548,2.34857->48.85294,2.28045": "}daiH{uiMOFMBQGTlAd@vBnAxFFd@B~BBfBgAIwASeBQ{Da@CCaAMoBzNc@zCcBlNkAdHaAvFUfAONUbA{@xDyApGMCWjA_BfHq@tCmBnIaC`KoDnOo@`DiAnFsDbP]xA_@nAcDzH_AvB[j@q@n@Pp@zBnKpC|MTnAPv@OlBKv@{@nEiA`GqDtReDnP_@|BC@INARBPQRGVuAxGsApGqA|FeEnRe@pBm@jCSp@Q^KLk@f@{DxDiBlBiCjCiCdCy@v@oA`BcE~DeD`DKFKAMI{BgDQWIc@JJf@f@n@n@f@d@j@x@hFbIjAbBpDpFvAxBxBlD~@dBRf@ELAJXj@HTFNJh@@x@a@o@STMOA?A?MZ",
+    "48.85294,2.28045->48.84640,2.28502": "}qdiH}k|LP[JPHKJK\\f@`@n@jA~BjA~BFZd@dA^j@Tf@JMO]We@MUNUb@q@zAiCdC{EfAsBb@y@b@q@jAuBb@y@h@eAxB}DnAuBpAcCHIDCh@_Ab@u@D~A?N@d@@X"
   }
 }
