@@ -738,6 +738,13 @@
           "lat": 48.881266424227,
           "lon": 2.3281970934506,
           "time": "16h52"
+        },
+        {
+          "id": "station_9039",
+          "name": "Chaussée d'Antin - Haussmann",
+          "lat": 48.87243,
+          "lon": 2.33359,
+          "time": "17h25"
         }
       ],
       "segments": [
@@ -780,6 +787,10 @@
         {
           "depart": "16h46",
           "arrive": "16h52"
+        },
+        {
+          "depart": "17h13",
+          "arrive": "17h25"
         }
       ]
     }
@@ -1281,6 +1292,22 @@
         "start_time": "2026-03-29T14:46:02.552Z",
         "end_time": "2026-03-29T14:52:18.385Z",
         "status": "completed"
+      },
+      {
+        "id": "9984196c-2739-4ded-8e4d-60a01259b0ae",
+        "start_station_id": "station_9037",
+        "end_station_id": "station_9039",
+        "start_time": "2026-03-29T15:13:10.275Z",
+        "end_time": "2026-03-29T15:25:03.440Z",
+        "status": "completed"
+      },
+      {
+        "id": "a10c9e57-68c9-4e6c-aee4-ea383dec3814",
+        "start_station_id": "station_9039",
+        "end_station_id": null,
+        "start_time": "2026-03-29T15:38:10.901Z",
+        "end_time": null,
+        "status": "ongoing"
       }
     ]
   },
@@ -1350,6 +1377,7 @@
     "48.87802,2.28424->48.83851,2.27829": "kniiH}c}LZ`@`@NJKBIAMDI`@j@f@TFc@LcA\\sAf@{Bh@aCfBeIzCuNd@sBVmAQMCQ@c@J_AZcBvAoG|C{NjAqFj@kCRm@HMTKVPh@gCn@sC^eBZcBJJPDZ@nBIdCKx@GtGWrAIjDQfFSxDOj@CRDJBh@Bb@FJAJGf@c@XA`@Cl@Cd@CbBIj@A\\Fh@NBrA@f@D~AN`CRvBJv@f@zCd@tBn@zBJZRf@n@|AVh@\\l@lAfB\\`A^p@n@bAp@hA`BlCfFjIPTNJJBLR`@n@^r@NPd@h@t@j@x@XjBj@fA\\v@^z@f@`@`@r@bAb@d@PXLTpB`DxDbG`B`CrD|F`@l@LPN^b@v@v@pALFxA|Br@dAJ^JRpAlBjAhBRNd@v@pB`Db@p@V`@n@v@\\n@hA`BhAxALb@h@bAVf@r@`ARSRa@DBTChAMxFi@rI_AnAOTGdGo@d@EnC]pEi@",
     "48.83851,2.27829->48.87145,2.33829": "swaiH}~{LaJfAyBRqD`@UF}C\\}Dd@sDZkFj@GCYk@IQKIEEWCSC{@a@Wo@qAeBeA_BIQQWs@aAYa@eAaBuAyBMUOGMUaA{Aw@iAa@o@G]u@iAi@w@u@kAIEEEe@s@S_@_@q@O_@Y_@MSqAsBaA{AaCqDiDmFgBmCaAcB{@eAi@s@o@c@}@c@]So@QwC}@aAg@a@a@g@k@Uc@{@wASGOQ{@qAm@cAoB_DiEeH}@}AQm@k@{@[e@KQQYaAuBaAuC_AyDo@_ESkBO}BIqBEmCIqA?k@@c@@_@@W?w@C}EIoHGyKAaKIgEe@}EI{C?iAE{ICiDBqLB}@Hs@Lg@d@yBYS[S}@i@qA{@i@]YUCMGGSOIMy@k@Ps@p@sCAKGIWWkDcCeDyBaAw@GG_@C[v@[lAQlASMOGG@IDw@k@aDwBiDyBm@g@?k@U{Bi@oFO_@KeAa@qEk@mGi@cGcAgKqBuSuAyNMkAn@J",
     "48.87145,2.33829->48.88454,2.33869": "qehiHeugMo@KQsBKoAIyAM_BLsAf@wFX_DLiAa@I_AK]CW@kCRm@JeAX_A|@q@r@qBbD_@j@k@h@iC|BkChC[`@U`@Qd@c@IgHsA_BW]KaAYcDiA]II@[Lc@RaDlAq@ZUBMJQAMAC@GXc@hFSpBQnBO|@i@lCeDyAs@[qAc@yAa@a@MNo@Ja@HUR[f@s@IQAACQEgA",
-    "48.88454,2.33869->48.88127,2.32820": "wwjiHwwgMFpABHHPg@r@KNQ`@{@zCcA`D_@rBg@~BnBzB|A~Ab@`@t@v@~AzAq@`Ek@|Dq@vEG\\QT`@x@zCrFHZDl@@XAJB\\DJPLN?NKBCFHBDJBxBDlFHh@@EwCAgA"
+    "48.88454,2.33869->48.88127,2.32820": "wwjiHwwgMFpABHHPg@r@KNQ`@{@zCcA`D_@rBg@~BnBzB|A~Ab@`@t@v@~AzAq@`Ek@|Dq@vEG\\QT`@x@zCrFHZDl@@XAJB\\DJPLN?NKBCFHBDJBxBDlFHh@@EwCAgA",
+    "48.88127,2.32820->48.87243,2.33359": "acjiHgveM@fADvC`@@z@?`ABlFF~ILzGLhBf@M_Cw@{Ke@qGa@aFZKlHaCt@W|@]rC_An@S|Bu@"
   }
 }
