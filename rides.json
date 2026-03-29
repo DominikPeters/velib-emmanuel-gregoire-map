@@ -752,6 +752,20 @@
           "lat": 48.89021003702,
           "lon": 2.3601756244898,
           "time": "17h50"
+        },
+        {
+          "id": "station_18011",
+          "name": "Pajol - Place Herbert",
+          "lat": 48.8927825,
+          "lon": 2.3635598,
+          "time": "18h12"
+        },
+        {
+          "id": "station_19016",
+          "name": "Hautpoul - Jean Jaurès",
+          "lat": 48.886393679436,
+          "lon": 2.3865414544355,
+          "time": "18h26"
         }
       ],
       "segments": [
@@ -802,6 +816,14 @@
         {
           "depart": "17h38",
           "arrive": "17h50"
+        },
+        {
+          "depart": "18h01",
+          "arrive": "18h12"
+        },
+        {
+          "depart": "18h14",
+          "arrive": "18h26"
         }
       ]
     }
@@ -1323,10 +1345,18 @@
       {
         "id": "7a5dcc78-1051-491e-aec2-16c89dea426b",
         "start_station_id": "station_18010",
-        "end_station_id": null,
+        "end_station_id": "station_18011",
         "start_time": "2026-03-29T16:01:54.751Z",
-        "end_time": null,
-        "status": "ongoing"
+        "end_time": "2026-03-29T16:12:33.378Z",
+        "status": "completed"
+      },
+      {
+        "id": "7f2df01b-3031-4eb6-90ba-e337e85ed006",
+        "start_station_id": "station_18011",
+        "end_station_id": "station_19016",
+        "start_time": "2026-03-29T16:14:33.441Z",
+        "end_time": "2026-03-29T16:26:30.056Z",
+        "status": "completed"
       }
     ]
   },
@@ -1398,6 +1428,8 @@
     "48.87145,2.33829->48.88454,2.33869": "qehiHeugMo@KQsBKoAIyAM_BLsAf@wFX_DLiAa@I_AK]CW@kCRm@JeAX_A|@q@r@qBbD_@j@k@h@iC|BkChC[`@U`@Qd@c@IgHsA_BW]KaAYcDiA]II@[Lc@RaDlAq@ZUBMJQAMAC@GXc@hFSpBQnBO|@i@lCeDyAs@[qAc@yAa@a@MNo@Ja@HUR[f@s@IQAACQEgA",
     "48.88454,2.33869->48.88127,2.32820": "wwjiHwwgMFpABHHPg@r@KNQ`@{@zCcA`D_@rBg@~BnBzB|A~Ab@`@t@v@~AzAq@`Ek@|Dq@vEG\\QT`@x@zCrFHZDl@@XAJB\\DJPLN?NKBCFHBDJBxBDlFHh@@EwCAgA",
     "48.88127,2.32820->48.87243,2.33359": "acjiHgveM@fADvC`@@z@?`ABlFF~ILzGLhBf@M_Cw@{Ke@qGa@aFZKlHaCt@W|@]rC_An@S|Bu@",
-    "48.87243,2.33359->48.89021,2.36018": "skhiHswfMnC}@Id@i@nAu@|Ao@[g@Qw@US[GQCGUkAqAwHkBeLu@{Dc@kCgAsG[mBa@yCmAaHUwAIOe@wCgAwGe@kC_@iCUgAeBiK_AuF_BeJcAoG}A}I}@eGwBy@iFyBkBy@sAs@iDeBUKYGi@EmCWa@QYG_BBgBG{CSyAOcC]o@KqAMiCIsFG}@?W@@[@I"
+    "48.87243,2.33359->48.89021,2.36018": "skhiHswfMnC}@Id@i@nAu@|Ao@[g@Qw@US[GQCGUkAqAwHkBeLu@{Dc@kCgAsG[mBa@yCmAaHUwAIOe@wCgAwGe@kC_@iCUgAeBiK_AuF_BeJcAoG}A}I}@eGwBy@iFyBkBy@sAs@iDeBUKYGi@EmCWa@QYG_BBgBG{CSyAOcC]o@KqAMiCIsFG}@?W@@[@I",
+    "48.89021,2.36018->48.89278,2.36356": "szkiHa~kMCd@_BByABgADiBBWiG?kAVoELqCgDU",
+    "48.89278,2.36356->48.88639,2.38654": "}jliHwrlMnHf@f@Bd@B~DZBoGTcLBoBLiEVsDv@aKPwB~AeINo@`@yAPTBDTm@k@q@}B_DyAuBqD}EY[NSLOrDoEvF{GjAyA{A{DYo@WV_@`@{BwFmB{EkCwGUq@j@CR?LC`Am@`CwA|D}Bt@a@ZMrDkAVzAr@UdA]"
   }
 }
