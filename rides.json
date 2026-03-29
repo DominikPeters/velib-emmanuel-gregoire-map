@@ -717,6 +717,13 @@
           "lat": 48.838507403334,
           "lon": 2.2782871127129,
           "time": "12h05"
+        },
+        {
+          "id": "station_2013",
+          "name": "Favart - Italiens",
+          "lat": 48.871446353921,
+          "lon": 2.3382901058508,
+          "time": "15h13"
         }
       ],
       "segments": [
@@ -747,6 +754,10 @@
         {
           "depart": "12h12",
           "arrive": "12h17"
+        },
+        {
+          "depart": "14h45",
+          "arrive": "15h13"
         }
       ]
     }
@@ -1228,10 +1239,10 @@
       {
         "id": "0107d662-8c8f-4c72-a858-02cef3be858c",
         "start_station_id": "station_15070",
-        "end_station_id": null,
+        "end_station_id": "station_2013",
         "start_time": "2026-03-29T12:45:12.001Z",
-        "end_time": null,
-        "status": "ongoing"
+        "end_time": "2026-03-29T13:13:54.759Z",
+        "status": "completed"
       }
     ]
   },
@@ -1298,6 +1309,7 @@
     "48.85294,2.28045->48.84640,2.28502": "}qdiH}k|LP[JPHKJK\\f@`@n@jA~BjA~BFZd@dA^j@Tf@JMO]We@MUNUb@q@zAiCdC{EfAsBb@y@b@q@jAuBb@y@h@eAxB}DnAuBpAcCHIDCh@_Ab@u@D~A?N@d@@X",
     "48.84640,2.28502->48.83696,2.27411": "siciHih}LRvJ|@l@hBrANJ@C^\\zClCjAfA~BwGL]r@l@~@t@pGrFl@f@bA|@bBtA`Az@~@v@LDvAlAbCtBRXRBF?JEtBWj@GlAQr@D@@?BD@@?FJf@TdAd@]jCg@fEaA~Gi@tC[jBo@rCy@fDYbAg@rAa@tAGTVTDFDMX}@Tu@N{@He@bBaHn@uC",
     "48.83696,2.27411->48.87802,2.28424": "enaiHkd{L\\iBl@wE~@wG^cCPcADY]O]K]O{@_@?AACAAE?CBAD?B?@]CUAa@F_@Fq@Hm@FmANKD[CqEh@oC\\e@DeGn@UFoANwEf@{BVyFh@_BP[i@CEIQKIEEC?c@EOGo@[Wo@qAeBeA_BIQQWaAsA{@qAkByCMUOGMUgAeBsAoBG]W_@gAaBu@kAIEEEy@sA_@q@O_@Y_@_@m@}DkG{AyBsD{FoB_DYe@{@eAi@s@o@c@{Aw@yC}@m@QaAg@iAmA}@}AS]SG]c@}AeCuFcJgBwCWe@Qm@k@{@[e@GIMSQ]c@_Ae@iAQg@]iA_AyDw@gFS}BMiCCeAEsBIeAaBBm@DgAD{AFk@De@Da@Ac@J[XQJQJk@BgBHqADgFR_GZuGVy@FeCJoBH[AQEKKIe@g@xB_@~A{@vD_@fBUJMPM`@_@`BkAvFoA`GsDrPa@`CGz@?JBPGTw@hDw@rDiA`FmCdM{@tDk@~Be@|Aa@k@EFABBNKPe@O[a@",
-    "48.87802,2.28424->48.83851,2.27829": "kniiH}c}LZ`@`@NJKBIAMDI`@j@f@TFc@LcA\\sAf@{Bh@aCfBeIzCuNd@sBVmAQMCQ@c@J_AZcBvAoG|C{NjAqFj@kCRm@HMTKVPh@gCn@sC^eBZcBJJPDZ@nBIdCKx@GtGWrAIjDQfFSxDOj@CRDJBh@Bb@FJAJGf@c@XA`@Cl@Cd@CbBIj@A\\Fh@NBrA@f@D~AN`CRvBJv@f@zCd@tBn@zBJZRf@n@|AVh@\\l@lAfB\\`A^p@n@bAp@hA`BlCfFjIPTNJJBLR`@n@^r@NPd@h@t@j@x@XjBj@fA\\v@^z@f@`@`@r@bAb@d@PXLTpB`DxDbG`B`CrD|F`@l@LPN^b@v@v@pALFxA|Br@dAJ^JRpAlBjAhBRNd@v@pB`Db@p@V`@n@v@\\n@hA`BhAxALb@h@bAVf@r@`ARSRa@DBTChAMxFi@rI_AnAOTGdGo@d@EnC]pEi@"
+    "48.87802,2.28424->48.83851,2.27829": "kniiH}c}LZ`@`@NJKBIAMDI`@j@f@TFc@LcA\\sAf@{Bh@aCfBeIzCuNd@sBVmAQMCQ@c@J_AZcBvAoG|C{NjAqFj@kCRm@HMTKVPh@gCn@sC^eBZcBJJPDZ@nBIdCKx@GtGWrAIjDQfFSxDOj@CRDJBh@Bb@FJAJGf@c@XA`@Cl@Cd@CbBIj@A\\Fh@NBrA@f@D~AN`CRvBJv@f@zCd@tBn@zBJZRf@n@|AVh@\\l@lAfB\\`A^p@n@bAp@hA`BlCfFjIPTNJJBLR`@n@^r@NPd@h@t@j@x@XjBj@fA\\v@^z@f@`@`@r@bAb@d@PXLTpB`DxDbG`B`CrD|F`@l@LPN^b@v@v@pALFxA|Br@dAJ^JRpAlBjAhBRNd@v@pB`Db@p@V`@n@v@\\n@hA`BhAxALb@h@bAVf@r@`ARSRa@DBTChAMxFi@rI_AnAOTGdGo@d@EnC]pEi@",
+    "48.83851,2.27829->48.87145,2.33829": "swaiH}~{LaJfAyBRqD`@UF}C\\}Dd@sDZkFj@GCYk@IQKIEEWCSC{@a@Wo@qAeBeA_BIQQWs@aAYa@eAaBuAyBMUOGMUaA{Aw@iAa@o@G]u@iAi@w@u@kAIEEEe@s@S_@_@q@O_@Y_@MSqAsBaA{AaCqDiDmFgBmCaAcB{@eAi@s@o@c@}@c@]So@QwC}@aAg@a@a@g@k@Uc@{@wASGOQ{@qAm@cAoB_DiEeH}@}AQm@k@{@[e@KQQYaAuBaAuC_AyDo@_ESkBO}BIqBEmCIqA?k@@c@@_@@W?w@C}EIoHGyKAaKIgEe@}EI{C?iAE{ICiDBqLB}@Hs@Lg@d@yBYS[S}@i@qA{@i@]YUCMGGSOIMy@k@Ps@p@sCAKGIWWkDcCeDyBaAw@GG_@C[v@[lAQlASMOGG@IDw@k@aDwBiDyBm@g@?k@U{Bi@oFO_@KeAa@qEk@mGi@cGcAgKqBuSuAyNMkAn@J"
   }
 }
