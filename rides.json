@@ -890,12 +890,34 @@
           "lat": 48.8482070397636,
           "lon": 2.2898658737540245,
           "time": "08h18"
+        },
+        {
+          "id": "station_21032",
+          "name": "Sèvres-Gallieni",
+          "lat": 48.837809408957,
+          "lon": 2.2281519323587,
+          "time": "08h51"
+        },
+        {
+          "id": "station_21021",
+          "name": "Enfants du Paradis - Peupliers",
+          "lat": 48.833122686454,
+          "lon": 2.2571459412575,
+          "time": "09h07"
         }
       ],
       "segments": [
         {
           "depart": "08h11",
           "arrive": "08h18"
+        },
+        {
+          "depart": "08h29",
+          "arrive": "08h51"
+        },
+        {
+          "depart": "08h57",
+          "arrive": "09h07"
         }
       ]
     }
@@ -1483,10 +1505,18 @@
       {
         "id": "44352316-a25e-4f35-ba3d-ad3ec5a97dd3",
         "start_station_id": "station_15031",
-        "end_station_id": null,
+        "end_station_id": "station_21032",
         "start_time": "2026-03-30T06:29:53.818Z",
-        "end_time": null,
-        "status": "ongoing"
+        "end_time": "2026-03-30T06:51:13.213Z",
+        "status": "completed"
+      },
+      {
+        "id": "42cf62c5-3d8c-45d7-a409-41ef252e6d49",
+        "start_station_id": "station_21032",
+        "end_station_id": "station_21021",
+        "start_time": "2026-03-30T06:57:26.569Z",
+        "end_time": "2026-03-30T07:07:22.699Z",
+        "status": "completed"
       }
     ]
   },
@@ -1565,6 +1595,8 @@
     "48.82875,2.24591->48.81527,2.29808": "sz_iH_tuL_@sA?]CsBKq@c@yBs@{C_AyBaA{By@wByAmDmB}DMWPOi@[w@g@q@a@Fc@j@aEJo@FKf@cDRwAf@sDZoB\\aCt@cChCiI`@mARo@L}@ZqCBe@P{AN[\\w@F]?uBR}@DSNo@COh@mBbA{DpAcELOLi@DWBKBQFQ?MGMCAC_AE_GIyPEsG@i@DADIDSAOGKECNuB\\yEl@gITmCPwAJa@d@qAPa@NW~AsBHWfA}AtD{EhAwApKkNpBaCVU?EAM?ELiCPoAfAwEdAkE`@oB`BwGJ@HEHO@MCUCGRgAn@gDb@gCl@cDFm@XcDRwDVBfB?~@EjBSDHVa@\\k@fB{CpBeC`CuCf@m@j@rA",
     "48.81527,2.29808->48.82377,2.27231": "sf}hHwy_MfBnEJTcCnCaBnBa@`@CBA@yBbAYX_Ad@WJFLLZXh@N^QVGHeCxDu@lA}AzB{@rAo@z@m@h@q@f@q@`@WH[FOCSOKMAKGMOIMHIP?TBFGLgAjEa@`B[lByB~IQ`AIp@U`DAd@uAbBoCjDwHzJqA`ByBtCw@fAi@r@SLi@r@y@fAS^vBfDh@`AfCnGRr@`@v@FPZ`AfBzGnBvH\\~A",
     "48.82377,2.27231->48.83959,2.30107": "w{~hHwxzL{AxE{BhHu@|Ba@w@GEKDq@l@MJYgAwAqEuCiIk@{AaAsCk@yADOAQEMIEI@IFCTBRcAnAGBKAUa@gBoDoBwDsAuBGIaAmAaFuGsEuEQOp@mCp@kCVyA{@gAYk@mF{IwBkDrDiNz@gCVYpBqABCNc@@w@?yACaAKGQEa@pAM`@S[yB{DwAcCaEwHAAECeAqBo@wAWm@sA{C_CkHu@sBMUs@eB}@uBmAsCeBwDiCwG{@wCQy@",
-    "48.83959,2.30107->48.84821,2.28987": "_~aiH_m`MPx@z@vChCvG`AtBfAdCjAtCZn@Un@M^{DxKuAvDyCtIaKlYgAbDcApCcC{Bo@M}@OmAECDOOyBmBiFmEoEuDaCqByCeCSr@"
+    "48.83959,2.30107->48.84821,2.28987": "_~aiH_m`MPx@z@vChCvG`AtBfAdCjAtCZn@Un@M^{DxKuAvDyCtIaKlYgAbDcApCcC{Bo@M}@OmAECDOOyBmBiFmEoEuDaCqByCeCSr@",
+    "48.84821,2.28987->48.83781,2.22815": "ktciHwf~LyCtKUx@mAlE]pAOn@{AvD}ArD_@|@ITNXd@r@DDHDt@jAh@v@\\h@V^F\\rAnBfAdBLTNFLTtAxBT^z@pA`ArAPVHPdA~ApAdBVn@v@zA^l@_BbFsBnGrF~ExCzC`B~AXXCBOJ[HoBb@fAjArJtJt@z@JNp@zAtAjD`BzDrDrIxBnFNf@d@hARf@Rx@f@rBl@jCbA`F~A`Hf@dCf@`CNAd@DPJLPJ\\Ff@A`@CPMd@OTON]LS@UCKCYUCfAIzA[rAS\\Iz@KpCRdB?zBQrDWbHGtAm@`PSxDWfHO|CM`EKdBKjCc@pKa@pKe@tKc@~Ky@pQYhHKxBGBKJMTCL@^FRJNLHL@PGJOFS@S?KAEJATB`AN|@JbBTrGx@",
+    "48.83781,2.22815->48.83312,2.25715": "ksaiHkdrLsGy@cBU?[UKEMPiFSYSKh@}AdBsEzAgEvC}HH_@NYlAcDnBkFxBaHDI\\_Bn@}Br@uCv@}C\\gAvBiEhCuET_@PUDBD@NCHMBQC]KMtBkOFw@h@uJ`AgQDaANiADW\\cCPeAqBgDuD}FtBgDNWJOKUISq@eB"
   }
 }
