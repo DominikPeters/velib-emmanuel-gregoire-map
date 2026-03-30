@@ -904,6 +904,13 @@
           "lat": 48.833122686454,
           "lon": 2.2571459412575,
           "time": "09h07"
+        },
+        {
+          "id": "station_6012",
+          "name": "Saint-Germain - Ciseaux",
+          "lat": 48.853305277595,
+          "lon": 2.3344654618827,
+          "time": "12h27"
         }
       ],
       "segments": [
@@ -918,6 +925,10 @@
         {
           "depart": "08h57",
           "arrive": "09h07"
+        },
+        {
+          "depart": "11h54",
+          "arrive": "12h27"
         }
       ]
     }
@@ -1517,6 +1528,14 @@
         "start_time": "2026-03-30T06:57:26.569Z",
         "end_time": "2026-03-30T07:07:22.699Z",
         "status": "completed"
+      },
+      {
+        "id": "ad42cf00-ba7a-46bb-9b11-f793b0a2e990",
+        "start_station_id": "station_21021",
+        "end_station_id": "station_6012",
+        "start_time": "2026-03-30T09:54:59.709Z",
+        "end_time": "2026-03-30T10:27:24.244Z",
+        "status": "completed"
       }
     ]
   },
@@ -1597,6 +1616,7 @@
     "48.82377,2.27231->48.83959,2.30107": "w{~hHwxzL{AxE{BhHu@|Ba@w@GEKDq@l@MJYgAwAqEuCiIk@{AaAsCk@yADOAQEMIEI@IFCTBRcAnAGBKAUa@gBoDoBwDsAuBGIaAmAaFuGsEuEQOp@mCp@kCVyA{@gAYk@mF{IwBkDrDiNz@gCVYpBqABCNc@@w@?yACaAKGQEa@pAM`@S[yB{DwAcCaEwHAAECeAqBo@wAWm@sA{C_CkHu@sBMUs@eB}@uBmAsCeBwDiCwG{@wCQy@",
     "48.83959,2.30107->48.84821,2.28987": "_~aiH_m`MPx@z@vChCvG`AtBfAdCjAtCZn@Un@M^{DxKuAvDyCtIaKlYgAbDcApCcC{Bo@M}@OmAECDOOyBmBiFmEoEuDaCqByCeCSr@",
     "48.84821,2.28987->48.83781,2.22815": "ktciHwf~LyCtKUx@mAlE]pAOn@{AvD}ArD_@|@ITNXd@r@DDHDt@jAh@v@\\h@V^F\\rAnBfAdBLTNFLTtAxBT^z@pA`ArAPVHPdA~ApAdBVn@v@zA^l@_BbFsBnGrF~ExCzC`B~AXXCBOJ[HoBb@fAjArJtJt@z@JNp@zAtAjD`BzDrDrIxBnFNf@d@hARf@Rx@f@rBl@jCbA`F~A`Hf@dCf@`CNAd@DPJLPJ\\Ff@A`@CPMd@OTON]LS@UCKCYUCfAIzA[rAS\\Iz@KpCRdB?zBQrDWbHGtAm@`PSxDWfHO|CM`EKdBKjCc@pKa@pKe@tKc@~Ky@pQYhHKxBGBKJMTCL@^FRJNLHL@PGJOFS@S?KAEJATB`AN|@JbBTrGx@",
-    "48.83781,2.22815->48.83312,2.25715": "ksaiHkdrLsGy@cBU?[UKEMPiFSYSKh@}AdBsEzAgEvC}HH_@NYlAcDnBkFxBaHDI\\_Bn@}Br@uCv@}C\\gAvBiEhCuET_@PUDBD@NCHMBQC]KMtBkOFw@h@uJ`AgQDaANiADW\\cCPeAqBgDuD}FtBgDNWJOKUISq@eB"
+    "48.83781,2.22815->48.83312,2.25715": "ksaiHkdrLsGy@cBU?[UKEMPiFSYSKh@}AdBsEzAgEvC}HH_@NYlAcDnBkFxBaHDI\\_Bn@}Br@uCv@}C\\gAvBiEhCuET_@PUDBD@NCHMBQC]KMtBkOFw@h@uJ`AgQDaANiADW\\cCPeAqBgDuD}FtBgDNWJOKUISq@eB",
+    "48.83312,2.25715->48.85331,2.33447": "ev`iH_zwLt@nBP^r@mA`BgC`A{AZg@x@zBTb@PPF]PmAF_@FWMQWg@aBkCm@{@{@gAg@i@UQ{EeEqBeBq@g@aAw@MGSW_@_@}@cAsEyE_BcBeHoH?UEQYo@Ua@iDcDyEqEq@}@{@{@yAmA_BuAuFmF_DyCo@s@q@y@gAcAa@]mB_BoCiCmAuAq@u@o@q@qA}@_@YqAmAuBsB_A}@g@u@eCiD{E_IwDmFiA_BSQWWYc@eA}B_@m@yBmDcEmGkI_MeAcB[a@oCmCMM]UWYe@i@_BuBIW]g@sBgCkCeDuDkF_GcIYi@CAIMa@{A_B{Hk@sCs@sFa@aDEWIy@?Q@W?So@cIKqAg@b@f@c@XA`@Cl@Cd@CbBIj@A\\Fh@NIeA?[@m@?i@BS?g@AiCGaKIsIAcLImFCq@WaCQsBCwCCwHC_E?yMB}@Fk@v@oD\\sAf@u@~DuDzDyDdD}ChGsFfDcDv@{@t@aA|BkDXy@hAeDbA}CrAmHdAwFv@gFfAgHfAsHb@HBDAT"
   }
 }
