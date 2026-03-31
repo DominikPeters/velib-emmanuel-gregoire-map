@@ -1120,6 +1120,13 @@
           "lat": 48.891163,
           "lon": 2.3865705,
           "time": "23h16"
+        },
+        {
+          "id": "station_10204",
+          "name": "Dunkerque - Maubeuge",
+          "lat": 48.880432768947,
+          "lon": 2.3528900992907,
+          "time": "01h21"
         }
       ],
       "segments": [
@@ -1166,6 +1173,10 @@
         {
           "depart": "23h06",
           "arrive": "23h16"
+        },
+        {
+          "depart": "00h44",
+          "arrive": "01h21"
         }
       ]
     }
@@ -1947,10 +1958,10 @@
       {
         "id": "ed8f468c-0114-4d86-b6e8-b9b53f591778",
         "start_station_id": "station_19123",
-        "end_station_id": null,
+        "end_station_id": "station_10204",
         "start_time": "2026-03-31T22:44:21.191Z",
-        "end_time": null,
-        "status": "ongoing"
+        "end_time": "2026-03-31T23:21:55.444Z",
+        "status": "completed"
       }
     ]
   },
@@ -2052,6 +2063,7 @@
     "48.89374,2.34767->48.87557,2.39305": "ypliH{oiMA[zCgCpEoDZUr@Qx@AfE@rJ@tMHxBBdABrCBx@@T?LDVETEASEuAEcBQeFe@aO[eKOyCOyFKkE@wCAmJ?eF?yDFcCX{JHgEFiCJ{@^m@`@]b@Wd@_@TWZo@`@u@PQ\\Wr@U?eB@QFW`AwCtBuG^eAZq@LSj@w@~A}@rAYx@Iz@AdABnBNnCh@L@h@?^KRILKl@c@T[PYXy@Ps@Jy@HiACaAQaCEgD@o@J}CPyDj@oGNaApAiBdCgDfAwAn@gATm@\\sAP_BHmCkBsE]sAGs@AgAGuCKu@c@{AIS[m@IKO[]sCCq@CuD@oDBs@CQCUAm@?S",
     "48.87557,2.39305->48.88179,2.40306": "w~hiHqkrM@cANmEJu@DKDI@_@@{@AKK{DScEGgCCaDCm@MgA_@gFg@sHQeCoAiGaAsEu@yDGi@@MHo@CWAUCIIMIAKDGJm@`@YTQXYn@SpAuAnMm@rEI`@OZIPQNQDm@LuA`@KBWD_@F{@HeAKaAUe@QYQa@[w@s@c@_@YUTi@Ti@FS",
     "48.88179,2.40306->48.88433,2.40829": "}ejiHyitMs@fBg@i@uAmAa@YiEk@mAOAwAI{GAqAm@uIIgAd@MPG",
-    "48.88433,2.40829->48.89116,2.38657": "wujiHyhuMyGjBcCp@T`@Vp@b@jBh@lBF`@HJBTPbDNdC?T_@nHAp@IpBI~@WtFGbCO|BIPCVKr@MhBOtB?l@IDGNAT@XBDA`@Ct@FNSfFIZEf@EBCBEJALFX@@EHIBkFxA}Cx@k@NF^`CpN|@nFaFfCeB|@KNALAFVhAQJiFrCYP_@TWVQN"
+    "48.88433,2.40829->48.89116,2.38657": "wujiHyhuMyGjBcCp@T`@Vp@b@jBh@lBF`@HJBTPbDNdC?T_@nHAp@IpBI~@WtFGbCO|BIPCVKr@MhBOtB?l@IDGNAT@XBDA`@Ct@FNSfFIZEf@EBCBEJALFX@@EHIBkFxA}Cx@k@NF^`CpN|@nFaFfCeB|@KNALAFVhAQJiFrCYP_@TWVQN",
+    "48.89116,2.38657->48.88043,2.35289": "u`liHybqMb@a@v@i@FCDT\\zAhA|ETp@`@bABNr@lBNVDJL^ONgArAc@f@cAjA_AfAJJFBX?v@CJE@AFHHRRd@pCdHjBxEHVRULOPSjAyAjD`JbDjITd@jAvCpC~GpFjNl@bBRTpA`AVND^RhALh@@JRZX~A@JJx@z@dFjAxGvD|TvAhI~@|FbAjF]NE?n@jBDHLf@N~@?N_AjIUzCGl@c@jCUhA]zC"
   }
 }
