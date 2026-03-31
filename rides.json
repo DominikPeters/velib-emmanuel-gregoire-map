@@ -1092,6 +1092,20 @@
           "lat": 48.89374453351521,
           "lon": 2.3476678133010864,
           "time": "19h03"
+        },
+        {
+          "id": "station_19121",
+          "name": "Belleville -  Pré Saint-Gervais",
+          "lat": 48.875565910073,
+          "lon": 2.3930460959673,
+          "time": "19h26"
+        },
+        {
+          "id": "station_19124",
+          "name": "Alexander Fleming - Belvédère",
+          "lat": 48.88179064200294,
+          "lon": 2.4030599377642674,
+          "time": "19h34"
         }
       ],
       "segments": [
@@ -1122,6 +1136,14 @@
         {
           "depart": "18h45",
           "arrive": "19h03"
+        },
+        {
+          "depart": "19h04",
+          "arrive": "19h26"
+        },
+        {
+          "depart": "19h27",
+          "arrive": "19h34"
         }
       ]
     }
@@ -1871,10 +1893,18 @@
       {
         "id": "07b42929-8d64-4ee0-841d-6f4c53513393",
         "start_station_id": "station_18030",
-        "end_station_id": null,
+        "end_station_id": "station_19121",
         "start_time": "2026-03-31T17:04:40.545Z",
-        "end_time": null,
-        "status": "ongoing"
+        "end_time": "2026-03-31T17:26:29.128Z",
+        "status": "completed"
+      },
+      {
+        "id": "fdbe66b8-5e0a-4d61-97b8-360dbefdb690",
+        "start_station_id": "station_19121",
+        "end_station_id": "station_19124",
+        "start_time": "2026-03-31T17:27:25.723Z",
+        "end_time": "2026-03-31T17:34:26.205Z",
+        "status": "completed"
       }
     ]
   },
@@ -1972,6 +2002,8 @@
     "48.82875,2.24591->48.85865,2.30372": "sz_iH_tuL_@sA?]CsBKq@c@yBs@{C_AyBaA{By@wByAmDmB}DMWPOi@[w@g@q@a@Fc@j@aEJo@FKf@cDRwAf@sDZoB\\aCJa@_@m@eBuCo@}@]e@oAwAy@o@cByAqD_D]SmAcA_@WsAyAsE}E_HiHcCgC?MAKYu@Q_@}@_AcE{D{BuB]c@kAoAuAoAaBuAaLsKkAoAiAkAo@o@iA{@kCcCcBcBcAmAQUc@a@mA{@eA{@_FyEi@s@{AsBcBcC{ByDaCqDkD}Ek@i@UYc@}@Yq@_@q@cCwDs@oAiBmCsB_Dw@eAeAaBcEmGa@i@w@y@qAoAQQc@[gC_DUYCMU_@qA_BwCuDiAwAP[jBiD|@eB`@m@Z]^w@g@w@gByCiBqCaA{AIMP[v@yAv@wAjBcDjC_F~DcHXc@MGKEKQeB_Hi@sBq@gDSu@G[h@Q",
     "48.85865,2.30372->48.87276,2.29155": "sueiHo}`MeG|BgAb@}EfBm@VCP?ZYH[Lu@?k@B?}@@e@Bc@?mBO}QE{ICcKEmB_A?e@@uFJQ@gB?mAFsABqBDoDBqEHa@DeBBOQ_@rAYvAeArE{BlKyAxGeChLW~@cAzEuAdG{A~GmA`GqAvFUx@GCOCW@a@NUVKTI`@Ex@Dh@Hd@LVZ^ZJP@TCTMBCLTfAhDrAdEf@zAi@t@QV",
     "48.87276,2.29155->48.86027,2.34125": "}mhiHqq~L]d@CGSe@}@sBQWQOIiANAb@Ml@]XU^a@f@}@Vs@Le@J[Fo@Fm@ByAMkB]mBk@sAa@m@k@g@TcAdBuH^aB|@eENs@d@qBdBkIbBwHj@wCbAeE`AsEhCgLjC}LtDcQxD}PbAoEhAoFNo@SMb@mBBWZP~@p@TJb@Bz@KJ?b@PZuA\\wAVgAp@QdAyEbAeEvAkGR}@DQGE^cB\\_B~@eE^aBnBwIPy@JWF@DBFDHa@b@aCl@kEjAuIZiCx@{Ft@gFJeALcDZgGVcDcBu@PiA@c@y@OYIa@Sg@]Ke@",
-    "48.86027,2.34125->48.89374,2.34767": "s_fiHyghMBPMf@Kn@GZUK{@]{Ak@sEmBqEkBeFwBwCiAwCqA_CgAgBWYEi@Po@TcBn@eBj@cA^ABwCdA{@XMAsBe@}Cq@_AK]CW@kCRm@JeAX_A|@q@r@qBbD_@j@k@h@MJYwBc@oCgAkGIO_@}BKw@eAeGi@cDwAuIqAwHuBwLUqAo@iEYyAyBpB}ArAcGhFmB`B}ArAq@r@mGpFIDg@HYA_@AeBC}DA}IMsECeFBoCCcCAmB@aAFe@Z}CbCeFbE}AnAqElDm@^BLBNPQfBuA~@o@`CoBv@k@BRAF"
+    "48.86027,2.34125->48.89374,2.34767": "s_fiHyghMBPMf@Kn@GZUK{@]{Ak@sEmBqEkBeFwBwCiAwCqA_CgAgBWYEi@Po@TcBn@eBj@cA^ABwCdA{@XMAsBe@}Cq@_AK]CW@kCRm@JeAX_A|@q@r@qBbD_@j@k@h@MJYwBc@oCgAkGIO_@}BKw@eAeGi@cDwAuIqAwHuBwLUqAo@iEYyAyBpB}ArAcGhFmB`B}ArAq@r@mGpFIDg@HYA_@AeBC}DA}IMsECeFBoCCcCAmB@aAFe@Z}CbCeFbE}AnAqElDm@^BLBNPQfBuA~@o@`CoBv@k@BRAF",
+    "48.89374,2.34767->48.87557,2.39305": "ypliH{oiMA[zCgCpEoDZUr@Qx@AfE@rJ@tMHxBBdABrCBx@@T?LDVETEASEuAEcBQeFe@aO[eKOyCOyFKkE@wCAmJ?eF?yDFcCX{JHgEFiCJ{@^m@`@]b@Wd@_@TWZo@`@u@PQ\\Wr@U?eB@QFW`AwCtBuG^eAZq@LSj@w@~A}@rAYx@Iz@AdABnBNnCh@L@h@?^KRILKl@c@T[PYXy@Ps@Jy@HiACaAQaCEgD@o@J}CPyDj@oGNaApAiBdCgDfAwAn@gATm@\\sAP_BHmCkBsE]sAGs@AgAGuCKu@c@{AIS[m@IKO[]sCCq@CuD@oDBs@CQCUAm@?S",
+    "48.87557,2.39305->48.88179,2.40306": "w~hiHqkrM@cANmEJu@DKDI@_@@{@AKK{DScEGgCCaDCm@MgA_@gFg@sHQeCoAiGaAsEu@yDGi@@MHo@CWAUCIIMIAKDGJm@`@YTQXYn@SpAuAnMm@rEI`@OZIPQNQDm@LuA`@KBWD_@F{@HeAKaAUe@QYQa@[w@s@c@_@YUTi@Ti@FS"
   }
 }
