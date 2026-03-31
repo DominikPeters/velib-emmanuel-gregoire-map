@@ -1064,6 +1064,13 @@
           "lat": 48.828753141436465,
           "lon": 2.245911467014621,
           "time": "07h52"
+        },
+        {
+          "id": "station_7021",
+          "name": "Bosquet - Saint-Dominique",
+          "lat": 48.858651709526,
+          "lon": 2.3037165802346,
+          "time": "09h09"
         }
       ],
       "segments": [
@@ -1078,6 +1085,10 @@
         {
           "depart": "07h29",
           "arrive": "07h52"
+        },
+        {
+          "depart": "08h45",
+          "arrive": "09h09"
         }
       ]
     }
@@ -1791,6 +1802,22 @@
         "start_time": "2026-03-31T05:29:03.088Z",
         "end_time": "2026-03-31T05:52:19.246Z",
         "status": "completed"
+      },
+      {
+        "id": "171655b7-87f7-4b8d-aa17-317ad35bf15d",
+        "start_station_id": "station_21016",
+        "end_station_id": "station_7021",
+        "start_time": "2026-03-31T06:45:47.656Z",
+        "end_time": "2026-03-31T07:09:42.012Z",
+        "status": "completed"
+      },
+      {
+        "id": "ae6da8db-4a35-421f-a91a-da1645eb41ac",
+        "start_station_id": "station_7021",
+        "end_station_id": null,
+        "start_time": "2026-03-31T07:23:06.236Z",
+        "end_time": null,
+        "status": "ongoing"
       }
     ]
   },
@@ -1884,6 +1911,7 @@
     "48.87369,2.36502->48.82759,2.34922": "mshiHg|lMGPVd@dAfBpB~CfHfI`A`AhAr@Z]DQxCgCfAeAF@RMvAmANGBAJHdAzARTJDLYt@{A~@aBDe@Tc@`AoBN]Zu@BOd@BPIdFgChBaAdHkDhAUv@QvB[hC_@dEo@nGaA~IoAZKrB[xCg@`G_ALFh@Ev@SPAPEF`@NZVL`A^t@h@b@f@NJjBp@\\LbExAdHfC`InC\\ZHLFPh@w@RYPUx@gAJCf@a@d@_@PWh@u@NQJGRAXNPRN\\Zt@bAtBr@xAnAjCHJZX@MDKBEJ[p@}@z@oA`AwA~AuBtAkBp@gATe@~AaCnA{BhAcB`FuHbCsDxB_DhBsB`@_@HTRh@Tl@Vv@h@pAdA~B|@jBn@dBlAvDzCrMpCtLn@xCjAzE^pAdA~Eh@~BlArFr@pCVlATOVQd@nBh@~BtAtFR~@@NRISbBWpACRCHNZLRRRhCpBD?JHfDhCv@j@rA~@JJBDHR?D?DX@XVCTNpBf@fGf@bH",
     "48.82759,2.34922->48.83306,2.33294": "qs_iHgyiMF`@f@p@vApB\\TxBzA|AdA@ZO`B]hFUjDWhCm@fIMd@W~AAhA?Tm@`Ia@lFgAvNUhCqCp@uAd@sDbAyCt@aGbBoCr@_Cn@WFA?",
     "48.83306,2.33294->48.83506,2.32373": "su`iHitfMYCICc@?m@s@YQS?_@JWPUd@MRg@tAWZk@RYHBlADZHVVd@LT[dA_AxDu@zCs@jCQl@o@dCv@b@jAx@lAz@zCrBSl@s@hCUx@wAbF",
-    "48.83506,2.32373->48.82875,2.24591": "kbaiHs{dMfEkAvBu@jA]FN`Bo@r@ULTVTnDxBzD`C|@v@jCvBcD~Lk@`CMNCLWbA{@nEm@`DsB`Oq@vEOd@?Fe@bBCLAPIXm@|Bm@pBLVR^Vh@z@hBTj@bAtBdArBb@z@\\d@rD|ErBjCp@r@bAjAZXVPTR\\^v@n@`@V^VKz@M`A}AhLo@tEQlAUxBEp@YvB[nBMfAGl@mAlIm@jDy@`EYdBoBjIy@xCwAhEoEbNaBzE\\l@jAu@f@]DGBER\\pA|BhGtKVZVVPV|@`BvChFzCjGnC`FfAzBt@hBm@~AIXGj@C`AGx@]rEe@`Ge@tGI?IDER@TBF?H@rBB|HJpOBzFAN@LBF@NG\\Mj@ATOj@[z@s@`Ca@`Bg@hBUv@C@EFW|@Oj@A\\KfAGz@[xAOj@UlBIj@SlAK`AANCFk@nBiBvFkAhDUnAgB`N[dCA\\_AtGSjAIp@_@hCXWpBoAr@i@~AfDbBxD`C`GfAfCb@dBVhAj@|CBhCF^Vz@"
+    "48.83506,2.32373->48.82875,2.24591": "kbaiHs{dMfEkAvBu@jA]FN`Bo@r@ULTVTnDxBzD`C|@v@jCvBcD~Lk@`CMNCLWbA{@nEm@`DsB`Oq@vEOd@?Fe@bBCLAPIXm@|Bm@pBLVR^Vh@z@hBTj@bAtBdArBb@z@\\d@rD|ErBjCp@r@bAjAZXVPTR\\^v@n@`@V^VKz@M`A}AhLo@tEQlAUxBEp@YvB[nBMfAGl@mAlIm@jDy@`EYdBoBjIy@xCwAhEoEbNaBzE\\l@jAu@f@]DGBER\\pA|BhGtKVZVVPV|@`BvChFzCjGnC`FfAzBt@hBm@~AIXGj@C`AGx@]rEe@`Ge@tGI?IDER@TBF?H@rBB|HJpOBzFAN@LBF@NG\\Mj@ATOj@[z@s@`Ca@`Bg@hBUv@C@EFW|@Oj@A\\KfAGz@[xAOj@UlBIj@SlAK`AANCFk@nBiBvFkAhDUnAgB`N[dCA\\_AtGSjAIp@_@hCXWpBoAr@i@~AfDbBxD`C`GfAfCb@dBVhAj@|CBhCF^Vz@",
+    "48.82875,2.24591->48.85865,2.30372": "sz_iH_tuL_@sA?]CsBKq@c@yBs@{C_AyBaA{By@wByAmDmB}DMWPOi@[w@g@q@a@Fc@j@aEJo@FKf@cDRwAf@sDZoB\\aCJa@_@m@eBuCo@}@]e@oAwAy@o@cByAqD_D]SmAcA_@WsAyAsE}E_HiHcCgC?MAKYu@Q_@}@_AcE{D{BuB]c@kAoAuAoAaBuAaLsKkAoAiAkAo@o@iA{@kCcCcBcBcAmAQUc@a@mA{@eA{@_FyEi@s@{AsBcBcC{ByDaCqDkD}Ek@i@UYc@}@Yq@_@q@cCwDs@oAiBmCsB_Dw@eAeAaBcEmGa@i@w@y@qAoAQQc@[gC_DUYCMU_@qA_BwCuDiAwAP[jBiD|@eB`@m@Z]^w@g@w@gByCiBqCaA{AIMP[v@yAv@wAjBcDjC_F~DcHXc@MGKEKQeB_Hi@sBq@gDSu@G[h@Q"
   }
 }
