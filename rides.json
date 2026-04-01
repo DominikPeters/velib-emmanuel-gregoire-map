@@ -1962,6 +1962,14 @@
         "start_time": "2026-03-31T22:44:21.191Z",
         "end_time": "2026-03-31T23:21:55.444Z",
         "status": "completed"
+      },
+      {
+        "id": "b65db8b4-856f-4a9d-9741-21cfa30fd570",
+        "start_station_id": "station_10204",
+        "end_station_id": null,
+        "start_time": "2026-03-31T23:55:51.219Z",
+        "end_time": null,
+        "status": "ongoing"
       }
     ]
   },
