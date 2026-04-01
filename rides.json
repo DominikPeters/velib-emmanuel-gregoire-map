@@ -1190,6 +1190,30 @@
           "arrive": "03h03"
         }
       ]
+    },
+    "2026-04-01": {
+      "stations": [
+        {
+          "id": "station_12150",
+          "name": "Bastille - Quai de la Rapée",
+          "lat": 48.84682410855,
+          "lon": 2.3669364675879,
+          "time": "04h02"
+        },
+        {
+          "id": "station_1116",
+          "name": "Ventadour - Opéra",
+          "lat": 48.866810653323,
+          "lon": 2.3343884482519,
+          "time": "04h13"
+        }
+      ],
+      "segments": [
+        {
+          "depart": "04h02",
+          "arrive": "04h13"
+        }
+      ]
     }
   },
   "rides_raw": {
@@ -1982,6 +2006,16 @@
         "end_time": "2026-04-01T01:03:18.718Z",
         "status": "completed"
       }
+    ],
+    "2026-04-01": [
+      {
+        "id": "8be66043-c053-4b35-8f96-fa82ac11d466",
+        "start_station_id": "station_12150",
+        "end_station_id": "station_1116",
+        "start_time": "2026-04-01T02:02:58.695Z",
+        "end_time": "2026-04-01T02:13:37.460Z",
+        "status": "completed"
+      }
     ]
   },
   "route_cache": {
@@ -2084,6 +2118,7 @@
     "48.88179,2.40306->48.88433,2.40829": "}ejiHyitMs@fBg@i@uAmAa@YiEk@mAOAwAI{GAqAm@uIIgAd@MPG",
     "48.88433,2.40829->48.89116,2.38657": "wujiHyhuMyGjBcCp@T`@Vp@b@jBh@lBF`@HJBTPbDNdC?T_@nHAp@IpBI~@WtFGbCO|BIPCVKr@MhBOtB?l@IDGNAT@XBDA`@Ct@FNSfFIZEf@EBCBEJALFX@@EHIBkFxA}Cx@k@NF^`CpN|@nFaFfCeB|@KNALAFVhAQJiFrCYP_@TWVQN",
     "48.89116,2.38657->48.88043,2.35289": "u`liHybqMb@a@v@i@FCDT\\zAhA|ETp@`@bABNr@lBNVDJL^ONgArAc@f@cAjA_AfAJJFBX?v@CJE@AFHHRRd@pCdHjBxEHVRULOPSjAyAjD`JbDjITd@jAvCpC~GpFjNl@bBRTpA`AVND^RhALh@@JRZX~A@JJx@z@dFjAxGvD|TvAhI~@|FbAjF]NE?n@jBDHLf@N~@?N_AjIUzCGl@c@jCUhA]zC",
-    "48.88043,2.35289->48.84682,2.36694": "q}iiHopjMOnAAr@hB_BzFeFvEcElBaBdBsAVQt@q@pAiAlAkArAiAfAaAbCqBpDcDzCgCdGaF|AwAZ]DQtBgBb@_@fAeAF@RM^[bAy@FAJH\\d@p@`AHHJDLYt@{A~@aBDe@Tc@`AoBb@aAHY@G^BHAdEuBbBy@jCsAlCuA~@c@^K`B[dDg@bImAdHaA`Ek@dBYZKhDi@bBYpB[nCc@LFh@Ev@Sb@GF`@DNTRZLp@Vt@h@b@f@NJjBp@rDpAfE|AjC~@lHfCRFJHZ^FPh@w@RYp@}@X_@FWj@m@VUu@[A`@[K"
+    "48.88043,2.35289->48.84682,2.36694": "q}iiHopjMOnAAr@hB_BzFeFvEcElBaBdBsAVQt@q@pAiAlAkArAiAfAaAbCqBpDcDzCgCdGaF|AwAZ]DQtBgBb@_@fAeAF@RM^[bAy@FAJH\\d@p@`AHHJDLYt@{A~@aBDe@Tc@`AoBb@aAHY@G^BHAdEuBbBy@jCsAlCuA~@c@^K`B[dDg@bImAdHaA`Ek@dBYZKhDi@bBYpB[nCc@LFh@Ev@Sb@GF`@DNTRZLp@Vt@h@b@f@NJjBp@rDpAfE|AjC~@lHfCRFJHZ^FPh@w@RYp@}@X_@FWj@m@VUu@[A`@[K",
+    "48.84682,2.36694->48.86681,2.33439": "ukciHehmMZJBN@N@FSTGVy@fAe@n@i@v@KVLRTp@@R?NJb@?JGLmBbDuDfGiBzCm@j@m@Zg@N{@HuBD]@a@?c@F]FIB_@RYRORYl@_AhDo@~B{@zCw@|Ba@`BsAnGeAfEcBvEq@fBy@tCCHQdAYx@[z@U^Sf@Mb@GZs@dDe@`Bc@~AQ|@iA`G}ApJoBfKOn@Gh@c@fC]`De@bEMn@U`Aa@hAOd@GZ[~DOhCQbEU|A{AxKi@pDi@xD_@nCLDDW~@eHJo@OQsDgBIIKs@MUQOOEQ@UNKJI?SSoBcCSMi@[[Jo@]MCi@Jo@TkA\\sAd@aBj@iDfAk@PMFMEQDUHg@PWHAIAGCGQOKE"
   }
 }
