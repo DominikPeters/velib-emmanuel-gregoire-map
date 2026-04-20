@@ -10,7 +10,7 @@ The Twitter account [@le_velib_a_greg](https://x.com/le_velib_a_greg) now tracks
 - Multi-day timeline with day tabs and a scrubbable time bar
 - Ride vs. parked time shown on the scrubber (colored = riding, gap = parked)
 - Other days' routes shown in subtle gray behind the active day
-- Auto-updates hourly via GitHub Actions
+- Auto-updates every 12 hours via GitHub Actions
 
 ## Route taken on Sunday 22 March
 
@@ -18,7 +18,7 @@ Route inferred from TV program (https://www.france.tv/info/emission-politique/82
 
 ## Data pipeline
 
-A GitHub Action runs `poll.py` every hour:
+A GitHub Action runs `poll.py` every 12 hours:
 1. Fetches latest rides from [velibest.fr](https://velibest.fr/)
 2. Resolves station IDs to names/coordinates using the [Vélib GBFS station database](https://www.velib-metropole.fr/donnees-open-data-gbfs-du-service-velib-metropole)
 3. Fetches cycling routes from Google Maps Directions API (cached in `rides.json`)
@@ -30,9 +30,9 @@ A GitHub Action runs `poll.py` every hour:
 |------|-------------|
 | `index.html` | Self-contained map viewer (Leaflet + vanilla JS) |
 | `rides.json` | All ride data, station lists per day, and route cache |
-| `poll.py` | Hourly polling script |
+| `poll.py` | Polling script |
 | `stations.json` | Vélib station database (GBFS) |
-| `.github/workflows/poll.yml` | Hourly cron workflow |
+| `.github/workflows/poll.yml` | 12-hour cron workflow |
 
 ## License and code
 
